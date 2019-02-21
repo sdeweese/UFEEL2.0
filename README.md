@@ -4,7 +4,7 @@ Mental Health application designed for Santa Clara University and its students
 
 # Instructions on how to start
 
-* Make sure you read how to use github so that you do not overwrite code and push to master/origin branch unknowingly *
+*Make sure you read how to use github so that you do not overwrite code and push to master/origin branch unknowingly*
 
 1. Install node.js
 2. Clone repo into a folder on your device by using "git clone " + our REPO ssh/https key
