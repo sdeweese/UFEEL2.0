@@ -1,27 +1,110 @@
+import { Animated, Easing } from "react-native";
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Login from './src/screens/LoginScreen.js';
-import Dashboard from './src/screens/DashboardScreen';
-import Diary from './src/screens/DiaryScreen';
+import Dashboard from './src/screens/DashboardScreen.js';
+import Diary from './src/screens/DiaryScreen.js';
+import Register from './src/screens/RegisterScreen.js';
+import Resource from './src/screens/ResourceScreen.js';
+import Caps from './src/screens/CAPScreen.js';
+import Shs from './src/screens/SHScreen.js';
+import Safety from './src/screens/SafetyScreen.js';
+
+const transitionConfig = () => {
+      return {
+        transitionSpec: {
+          duration: 500, // how long the transition will take
+          easing: Easing.ease, // easing function to use (https://facebook.github.io/react-native/docs/easing.html)
+          timing: Animated.timing, // the type of animation to use (timing, spring, decay)
+          useNativeDriver: true // delegate all the animation related work to the native layer
+        },
+        screenInterpolator: sceneProps => {
+          // next: add code for customizing the transition animation
+          const { layout, position, scene } = sceneProps;
+          const thisSceneIndex = scene.index; // the index of the current screen
+          const width = layout.initWidth;
+          const height = layout.initHeight;
+
+          const translateX = position.interpolate({
+                inputRange: [thisSceneIndex - 1, thisSceneIndex],
+                outputRange: [width, 0],
+                extrapolate: "clamp" // clamp so it doesn't go beyond the outputRange. Without this, you'll see a few black portions in the screen while navigating
+          });
+
+          const translateY = position.interpolate({
+                inputRange: [thisSceneIndex - 1, thisSceneIndex, thisSceneIndex + 1],
+                outputRange: [height, 0, 0],
+                extrapolate: "clamp"
+          });
+
+          const opacity = position.interpolate({
+                inputRange: [thisSceneIndex - 1, thisSceneIndex - 0.5, thisSceneIndex],
+                outputRange: [0, 0.2, 1],
+                extrapolate: "clamp"
+          });
+
+          if (thisSceneIndex > 1 && thisSceneIndex < 3) {
+              return { opacity, transform: [{ translateY }] };
+          } else {
+              return { opacity, transform: [{ translateX }] };
+          }
+        }
+      };
+};
 
 const AppNavigator = createStackNavigator({
-  Login: {
-    screen: Login,
-    navigationOptions: {
-      title: 'Login',
+    Login: {
+      screen: Login,
+      navigationOptions: {
+        title: 'Login',
+      }
+    },
+    Register: {
+      screen: Register,
+      navigationOptions: {
+        title: 'Register',
+      }
+    },
+    Dashboard: {
+      screen: Dashboard,
+      navigationOptions: {
+        title: 'Dashboard',
+        headerLeft: null
+      }
+    },
+    Diary: {
+      screen: Diary,
+      navigationOptions: {
+        title: 'Diary',
+      }
+    },
+    Resource: {
+      screen: Resource,
+      navigationOptions: {
+        title: 'Resource',
+      }
+    },
+    Caps: {
+      screen: Caps,
+      navigationOptions: {
+        title: 'CAPS',
+      }
+    },
+    Shs: {
+      screen: Shs,
+      navigationOptions: {
+        title: 'SHS',
+      }
+    },
+    Safety: {
+      screen: Safety,
+      navigationOptions: {
+        title: 'Safety',
+      }
     }
   },
-  Dashboard: {
-    screen: Dashboard,
-    navigationOptions: {
-      title: 'Dashboard',
-    }
-  },
-  Diary: {
-    screen: Diary,
-    navigationOptions: {
-      title: 'Diary',
-    }
-  }
+  {
+    initialRouteName: "Login",
+    transitionConfig
 });
 
 export default createAppContainer(AppNavigator);

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
+import axios from 'axios';
 
 class Login extends React.Component {
   constructor(props) {
@@ -14,6 +15,34 @@ class Login extends React.Component {
 
   login(ev) {
     ev.preventDefault();
+
+    axios({
+      method: 'POST',
+      url: 'https://murmuring-river-99075.herokuapp.com/db/login',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        key: '$UFEELTEAM$',
+        tableName: 'public.users',
+        email: `email='${this.state.email}'`,
+        password: `password='${this.state.password}'`
+      }
+    })
+    .then(res => {
+      console.log(res.data);
+      if (res.data.success) {
+        console.log("Login success");
+        this.props.navigation.navigate('Dashboard');
+      } else {
+        console.log("Error user not found");
+        Alert.alert('Error', 'User not found!', {text: 'Ok'});
+      }
+    })
+    .catch(err => {
+      console.log("Hello errors");
+      console.log('Error:', err);
+    });
   }
 
   render() {
@@ -28,8 +57,12 @@ class Login extends React.Component {
             <TextInput style={styles.inputText} secureTextEntry={true} placeholder={'Password                            '} onChangeText={(text) => this.setState({password: text})}/>
           </View>
 
-          <TouchableOpacity style={styles.loginButton} onPress={() => this.props.navigation.navigate('Dashboard')}>
+          <TouchableOpacity style={styles.loginButton} onPress={(ev) => this.login(ev)}>
             <Text style={styles.loginText}> LOGIN </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.loginButton} onPress={() => this.props.navigation.navigate('Register')}>
+            <Text style={styles.loginText}> Register </Text>
           </TouchableOpacity>
 
         </View>
