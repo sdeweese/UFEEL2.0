@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking } from 'react-native';
 import { LinearGradient } from 'expo';
-import { TranslateYAndOpacity, SharedElement } from 'react-native-motion';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 
 class Emotion1 extends React.Component {
@@ -15,11 +14,9 @@ class Emotion1 extends React.Component {
 
   render() {
     return (
-      <TranslateYAndOpacity duration={250}>
-        <View>
+      <View>
 
-        </View>
-      </TranslateYAndOpacity>
+      </View>
     )
   }
 }
