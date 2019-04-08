@@ -20,8 +20,20 @@ class Dashboard extends React.Component {
           </TouchableOpacity>
         </View>
 
+        <View>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Resource')}>
+            <Text> Resource </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('User')}>
+            <Text> ME </Text>
+          </TouchableOpacity>
+        </View>
+
         <View style={styles.bottom}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Safety')}>
             <Image style={styles.lifeline} source={require('../../assets/telephone.png')}/>
           </TouchableOpacity>
         </View>
@@ -41,6 +53,7 @@ const styles = StyleSheet.create ({
     justifyContent: 'space-around',
   },
   bottom: {
+    paddingBottom: 15,
     justifyContent: 'flex-end',
   },
   lifeline: {
