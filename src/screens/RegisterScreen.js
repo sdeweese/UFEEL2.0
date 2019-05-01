@@ -25,46 +25,35 @@ class RegisterScreen extends React.Component {
         var password = this.state.password;
         var email = this.state.email;
         var success = false;
-        bcrypt.genSalt(10, function(err, salt) {
-          bcrypt.hash(password, salt, function(err, hash) {
-        // Store hash in your password DB.
-            if (err) {
-              console.log("Bcrypt register error: ", err);
-            }
+        var salt = bcrypt.genSaltSync(10);
 
-            axios({
-              method: 'POST',
-              url: 'https://murmuring-river-99075.herokuapp.com/db/register',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              data: {
-                key: '$UFEELTEAM$',
-                tableName: 'public.users',
-                email: `'${email}'`,
-                password: `'${hash}'`
-              }
-            })
-            .then(resp => {
-              console.log(resp.data);
-              if (resp.data.success) {
-                console.log("Registration success");
-                success = true;
-              } else {
-                console.log("Registration failed")
-                Alert.alert('Registration Failed', 'Account with the email is already being used!', {text: 'Ok'});
-              }
-            })
-            .catch(error => {
-              console.log("Hello registration errors");
-              console.log(error);
-            });
-          });
+        axios({
+          method: 'POST',
+          url: 'https://murmuring-river-99075.herokuapp.com/db/register',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: {
+            key: '$UFEELTEAM$',
+            tableName: 'public.users',
+            email: `'${email}'`,
+            password: `'${bcrypt.hashSync(this.state.password, salt)}'`
+          }
+        })
+        .then(resp => {
+          console.log(resp.data);
+          if (resp.data.success) {
+            console.log("Registration success");
+            this.props.navigation.navigate('Login');
+          } else {
+            console.log("Registration failed")
+            Alert.alert('Registration Failed', 'Account with the email is already being used!', {text: 'Ok'});
+          }
+        })
+        .catch(error => {
+          console.log("Hello registration errors");
+          console.log(error);
         });
-
-        if (success) {
-          this.props.navigation.navigate('Login');
-        }
       } else {
         Alert.alert("Passwords do not match", 'Your passwords do not match. Please try again.', {text: 'Ok'});
       }

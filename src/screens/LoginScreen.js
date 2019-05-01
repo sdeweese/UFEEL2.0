@@ -39,14 +39,9 @@ class LoginScreen extends React.Component {
       console.log("res.data: ", res.data);
       if (res.data.success) {
         console.log("res.data.result[0].password: ", res.data.result[0].password);
-        this.setState({
-          hashPassword: res.data.result[0].password
-        });
-
         state_password = this.state.password;
-        hash_password = this.state.hashPassword;
 
-        if (bcrypt.compare(state_password, hash_password)) {
+        if (bcrypt.compareSync(state_password, res.data.result[0].password)) {
           console.log("Login success");
           console.log("Navigating");
           var userObj = { email: this.state.email };
