@@ -3,8 +3,11 @@ import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert } from 'reac
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+import bcrypt from 'react-native-bcrypt';
+import { connect } from 'react-redux';
 
-class Register extends React.Component {
+class RegisterScreen extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -14,37 +17,54 @@ class Register extends React.Component {
       };
     }
 
-    register (ev) {
+    register(ev) {
       ev.preventDefault();
 
       if (this.state.password === this.state.confirm_pass) {
-        axios({
-          method: 'POST',
-          url: 'https://murmuring-river-99075.herokuapp.com/db/register',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          data: {
-            key: '$UFEELTEAM$',
-            tableName: 'public.users',
-            email: `'${this.state.email}'`,
-            password: `'${this.state.password}'`
-          }
-        })
-        .then(resp => {
-          console.log(resp.data);
-          if (resp.data.success) {
-            console.log("Registration success");
-            this.props.navigation.navigate('Login');
-          } else {
-            console.log("Registration failed")
-            Alert.alert('Registration Failed', 'Account with the email is already being used!', {text: 'Ok'});
-          }
-        })
-        .catch(err => {
-          console.log("Hello registration errors");
-          console.log(err);
+        console.log("Register password: ", this.state.password);
+        var password = this.state.password;
+        var email = this.state.email;
+        var success = false;
+        bcrypt.genSalt(10, function(err, salt) {
+          bcrypt.hash(password, salt, function(err, hash) {
+        // Store hash in your password DB.
+            if (err) {
+              console.log("Bcrypt register error: ", err);
+            }
+
+            axios({
+              method: 'POST',
+              url: 'https://murmuring-river-99075.herokuapp.com/db/register',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              data: {
+                key: '$UFEELTEAM$',
+                tableName: 'public.users',
+                email: `'${email}'`,
+                password: `'${hash}'`
+              }
+            })
+            .then(resp => {
+              console.log(resp.data);
+              if (resp.data.success) {
+                console.log("Registration success");
+                success = true;
+              } else {
+                console.log("Registration failed")
+                Alert.alert('Registration Failed', 'Account with the email is already being used!', {text: 'Ok'});
+              }
+            })
+            .catch(error => {
+              console.log("Hello registration errors");
+              console.log(error);
+            });
+          });
         });
+
+        if (success) {
+          this.props.navigation.navigate('Login');
+        }
       } else {
         Alert.alert("Passwords do not match", 'Your passwords do not match. Please try again.', {text: 'Ok'});
       }
@@ -121,5 +141,27 @@ const styles = StyleSheet.create ({
     alignSelf: 'center'
   }
 });
+
+RegisterScreen.propTypes = {
+  userProf: PropTypes.func,
+};
+
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return {
+      userInformation: state.user
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      registerUser: (newUser) => dispatch({type: 'SAVE_USER', newUser: newUser})
+    };
+};
+
+const Register = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RegisterScreen);
 
 export default Register;

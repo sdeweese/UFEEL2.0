@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import axios from 'axios';
+import bcrypt from 'react-native-bcrypt';
+import PropTypes from 'prop-types';
 
-class Login extends React.Component {
+class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +18,10 @@ class Login extends React.Component {
 
   login(ev) {
     ev.preventDefault();
+
+    var logSuccess = false;
+
+    this.props.navigation.navigate('Emotion1');
 
     axios({
       method: 'POST',
@@ -30,10 +37,31 @@ class Login extends React.Component {
       }
     })
     .then(res => {
-      console.log(res.data);
+      console.log("res.data: ", res.data);
       if (res.data.success) {
-        console.log("Login success");
-        this.props.navigation.navigate('Dashboard');
+        console.log("res.data.result[0].password: ", res.data.result[0].password);
+        var password = this.state.password;
+        bcrypt.compare(password, res.data.result[0].password, function(err, rest) {
+          if (err) {
+            console.log("Hello bcrypt error");
+            console.log("Error: ", err);
+          }
+
+          if (rest) {
+            console.log("Login success");
+            logSuccess = true;
+            console.log("Bcrypt Log success: ", logSuccess);
+          } else {
+            console.log("Passwords do not match");
+            Alert.alert('Error', 'Passwords do not match!', {test: 'Ok'});
+          }
+        })
+        .then(res => {
+          console.log("Navigating");
+          var userObj = { email: this.state.email };
+          this.props.logSave(userObj);
+          this.props.navigation.navigate('Emotion1');
+        });
       } else {
         console.log("Error user not found");
         Alert.alert('Error', 'User not found!', {text: 'Ok'});
@@ -43,6 +71,7 @@ class Login extends React.Component {
       console.log("Hello errors");
       console.log('Error:', err);
     });
+
   }
 
   render() {
@@ -116,5 +145,27 @@ const styles = StyleSheet.create ({
     alignSelf: 'center'
   }
 });
+
+LoginScreen.propTypes = {
+  userProfile: PropTypes.func,
+};
+
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return {
+      userInformation: state.user
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      logSave: (user) => dispatch({type: 'LOGIN_SAVE', userObj: user})
+    };
+};
+
+const Login = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginScreen);
 
 export default Login;

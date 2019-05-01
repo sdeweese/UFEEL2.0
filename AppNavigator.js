@@ -8,6 +8,9 @@ import Resource from './src/screens/ResourceScreen.js';
 import Caps from './src/screens/CAPScreen.js';
 import Shs from './src/screens/SHScreen.js';
 import Safety from './src/screens/SafetyScreen.js';
+import Emotion1 from './src/screens/Emotion1Screen.js';
+import Emotion2 from './src/screens/Emotion2Screen.js';
+import Emotion3 from './src/screens/Emotion3Screen.js';
 
 const transitionConfig = () => {
       return {
@@ -100,6 +103,24 @@ const AppNavigator = createStackNavigator({
       navigationOptions: {
         title: 'Safety',
       }
+    },
+    Emotion1: {
+      screen: Emotion1,
+      navigationOptions: {
+        title: 'Emotion'
+      }
+    },
+    Emotion2: {
+      screen: Emotion2,
+      navigationOptions: {
+        title: 'Emotion'
+      }
+    },
+    Emotion3: {
+      screen: Emotion3,
+      navigationOptions: {
+        title: 'Emotion'
+      }
     }
   },
   {
@@ -107,4 +128,6 @@ const AppNavigator = createStackNavigator({
     transitionConfig
 });
 
-export default createAppContainer(AppNavigator);
+let Navigation = createAppContainer(AppNavigator)
+
+export default Navigation;
