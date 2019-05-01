@@ -12,18 +12,17 @@ class LoginScreen extends React.Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      hashPassword: ''
     };
   }
 
-  login(ev) {
+  async login(ev) {
     ev.preventDefault();
+    var state_password;
+    var hash_password;
 
-    var logSuccess = false;
-
-    this.props.navigation.navigate('Emotion1');
-
-    axios({
+    await axios({
       method: 'POST',
       url: 'https://murmuring-river-99075.herokuapp.com/db/login',
       headers: {
@@ -40,28 +39,21 @@ class LoginScreen extends React.Component {
       console.log("res.data: ", res.data);
       if (res.data.success) {
         console.log("res.data.result[0].password: ", res.data.result[0].password);
-        var password = this.state.password;
-        bcrypt.compare(password, res.data.result[0].password, function(err, rest) {
-          if (err) {
-            console.log("Hello bcrypt error");
-            console.log("Error: ", err);
-          }
+        this.setState({
+          hashPassword: res.data.result[0].password
+        });
 
-          if (rest) {
-            console.log("Login success");
-            logSuccess = true;
-            console.log("Bcrypt Log success: ", logSuccess);
-          } else {
-            console.log("Passwords do not match");
-            Alert.alert('Error', 'Passwords do not match!', {test: 'Ok'});
-          }
-        })
-        .then(res => {
+        state_password = this.state.password;
+        hash_password = this.state.hashPassword;
+
+        if (bcrypt.compare(state_password, hash_password)) {
+          console.log("Login success");
           console.log("Navigating");
           var userObj = { email: this.state.email };
           this.props.logSave(userObj);
           this.props.navigation.navigate('Emotion1');
-        });
+        }
+
       } else {
         console.log("Error user not found");
         Alert.alert('Error', 'User not found!', {text: 'Ok'});
@@ -71,7 +63,6 @@ class LoginScreen extends React.Component {
       console.log("Hello errors");
       console.log('Error:', err);
     });
-
   }
 
   render() {
