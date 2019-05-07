@@ -30,89 +30,101 @@ class Emotion2Screen extends React.Component {
   }
 
   renderElement() {
-
     if (this.props.emotion.emotion1 === "Sadness") {
       return this.state.sad_Emotions.map((emo) => {
+
         return (
-          <Button
-            onPress={(ev) => {
-              var emot = emo;
-              this.handleClick(ev, emot);
-            }}
-            title={emo}
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
+          <View style={styles.emoButton}>
+              <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+              onPress={(ev) => {
+                var emot = emo;
+                this.handleClick(ev, emot);
+              }}
+              title={emo}
+              color="#ffffff"
+              accessibilityLabel="Learn more about this purple button"
+              />
+        </View>
         )
       });
     } else if (this.props.emotion.emotion1 === "Surprise") {
       return this.state.sur_Emotions.map((emo) => {
         return (
-          <Button
-            onPress={(ev) => {
-              var emot = emo;
-              this.handleClick(ev, emot);
-            }}
-            title={emo}
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
+          <View style={styles.emoButton}>
+              <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+              onPress={(ev) => {
+                var emot = emo;
+                this.handleClick(ev, emot);
+              }}
+              title={emo}
+              color="#ffffff"
+              accessibilityLabel="Learn more about this purple button"
+              />
+        </View>
         )
       });
     } else if (this.props.emotion.emotion1 === "Joy") {
       return this.state.joy_Emotions.map((emo) => {
         return (
-          <Button
-            onPress={(ev) => {
-              var emot = emo;
-              this.handleClick(ev, emot);
-            }}
-            title={emo}
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
+          <View style={styles.emoButton}>
+              <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+              onPress={(ev) => {
+                var emot = emo;
+                this.handleClick(ev, emot);
+              }}
+              title={emo}
+              color="#ffffff"
+              accessibilityLabel="Learn more about this purple button"
+              />
+        </View>
         )
       });
     } else if (this.props.emotion.emotion1 === "Love") {
       return this.state.lov_Emotions.map((emo) => {
         return (
-          <Button
-            onPress={(ev) => {
-              var emot = emo;
-              this.handleClick(ev, emot);
-            }}
-            title={emo}
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
+          <View style={styles.emoButton}>
+              <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+              onPress={(ev) => {
+                var emot = emo;
+                this.handleClick(ev, emot);
+              }}
+              title={emo}
+              color="#ffffff"
+              accessibilityLabel="Learn more about this purple button"
+              />
+        </View>
         )
       });
     } else if (this.props.emotion.emotion1 === "Fear") {
       return this.state.fear_Emotions.map((emo) => {
         return (
-          <Button
-            onPress={(ev) => {
-              var emot = emo;
-              this.handleClick(ev, emot);
-            }}
-            title={emo}
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
+          <View style={styles.emoButton}>
+              <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+              onPress={(ev) => {
+                var emot = emo;
+                this.handleClick(ev, emot);
+              }}
+              title={emo}
+              color="#ffffff"
+              accessibilityLabel="Learn more about this purple button"
+              />
+        </View>
         )
       });
     } else {
       return this.state.ang_Emotions.map((emo) => {
         return (
-          <Button
-            onPress={(ev) => {
-              var emot = emo;
-              this.handleClick(ev, emot);
-            }}
-            title={emo}
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
+          <View style={styles.emoButton}>
+              <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+              onPress={(ev) => {
+                var emot = emo;
+                this.handleClick(ev, emot);
+              }}
+              title={emo}
+              color="#ffffff"
+              accessibilityLabel="Learn more about this purple button"
+              />
+        </View>
         )
       });
     }
@@ -120,13 +132,59 @@ class Emotion2Screen extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style= {styles.border}>
         {this.renderElement()}
       </View>
     )
   }
 
 }
+
+const styles = StyleSheet.create ({
+
+  header: {
+    justifyContent: 'center',
+    flex: 1,
+    marginBottom: 5,
+
+  },
+
+  headText: {
+    fontSize: 40,
+    justifyContent: 'center',
+    alignContent: 'center',
+    paddingLeft: 90,
+
+  },
+
+  format: {
+        flex: 1,
+        justifyContent: 'space-between',
+        justifyContent: 'center',
+        backgroundColor: '#f5c278'
+  },
+  emoButton: {
+    justifyContent: 'space-between',
+    justifyContent: 'center',
+    backgroundColor: '#ee7b86',
+    borderRadius: 40,
+    borderWidth: 2,
+    padding: 20,
+    marginTop: 15,
+    marginBottom: 15,
+    marginLeft: 10,
+    marginRight: 10,
+    fontSize: 30,
+  },
+  text: {
+    fontSize: 30,
+  },
+  border: {
+    height: verticalScale(700),
+    backgroundColor: '#f5c278'
+  }
+
+});
 
 Emotion2Screen.propTypes = {
   setEmotion2: PropTypes.func,

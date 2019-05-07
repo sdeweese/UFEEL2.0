@@ -11,6 +11,8 @@ import Safety from './src/screens/SafetyScreen.js';
 import Emotion1 from './src/screens/Emotion1Screen.js';
 import Emotion2 from './src/screens/Emotion2Screen.js';
 import Emotion3 from './src/screens/Emotion3Screen.js';
+import User from './src/screens/UserScreen.js';
+import Entry from './src/screens/EntryScreen.js';
 
 const transitionConfig = () => {
       return {
@@ -121,10 +123,22 @@ const AppNavigator = createStackNavigator({
       navigationOptions: {
         title: 'Emotion'
       }
+    },
+    User: {
+      screen: User,
+      navigationOptions: {
+        title: 'User'
+      }
+    },
+    Entry: {
+      screen: Entry,
+      navigationOptions: {
+        title: 'Diary Entries'
+      }
     }
   },
   {
-    initialRouteName: "Login",
+    initialRouteName: "Emotion1",
     transitionConfig
 });
 

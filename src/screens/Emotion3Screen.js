@@ -51,6 +51,17 @@ class Emotion3Screen extends React.Component {
     var date = new Date();
 
     this.props.saveEmotions(date);
+
+    var check = true;
+
+    AsyncStorage.setItem('daily_check', JSON.stringify(check))
+    .then(() => {
+      console.log("Check was saved successfully");
+    })
+    .catch(() => {
+      console.log("There was an error saving the product");
+    });
+
     this.props.navigation.navigate('Dashboard');
   }
 
@@ -59,71 +70,81 @@ class Emotion3Screen extends React.Component {
       if (this.props.emotion.emotion2 === "Sadness") {
         return this.state.sadEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Suffering") {
         return this.state.sufEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Disappointed") {
         return this.state.disEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Shameful") {
         return this.state.shameEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else {
         return this.state.negEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       }
@@ -131,71 +152,81 @@ class Emotion3Screen extends React.Component {
       if (this.props.emotion.emotion2 === "Stunned") {
         return this.state.stunEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+            </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Confused") {
         return this.state.confEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Amazed") {
         return this.state.amazEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Overcome") {
         return this.state.overEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else {
         return this.state.moveEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       }
@@ -203,71 +234,81 @@ class Emotion3Screen extends React.Component {
       if (this.props.emotion.emotion2 === "Content") {
         return this.state.contEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Happy") {
         return this.state.hapEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Proud") {
         return this.state.proudEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Enthusiastic") {
         return this.state.enthusEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else {
         return this.state.elatEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       }
@@ -275,71 +316,81 @@ class Emotion3Screen extends React.Component {
       if (this.props.emotion.emotion2 === "Affectionate") {
         return this.state.affEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Longing") {
         return this.state.longEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Desire") {
         return this.state.desEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Tenderness") {
         return this.state.tendEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else {
         return this.state.peaceEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       }
@@ -347,71 +398,81 @@ class Emotion3Screen extends React.Component {
       if (this.props.emotion.emotion2 === "Scared") {
         return this.state.scaredEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Terror") {
         return this.state.terrEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Insecure") {
         return this.state.insEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Nervous") {
         return this.state.nervEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else {
         return this.state.horrEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       }
@@ -419,71 +480,81 @@ class Emotion3Screen extends React.Component {
       if (this.props.emotion.emotion2 === "Rage") {
         return this.state.rageEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Exasperated") {
         return this.state.exasEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Irritable") {
         return this.state.irrEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else if (this.props.emotion.emotion2 === "Envy") {
         return this.state.envyEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       } else {
         return this.state.disgEmotions.map((emo) => {
           return (
-            <Button
-              onPress={(ev) => {
-                var emot = emo;
-                this.handleClick(ev, emot);
-              }}
-              title={emo}
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />
+            <View style={styles.emoButton}>
+                <Button containerViewStyle={{width: '100%', marginLeft: 0}}
+                onPress={(ev) => {
+                  var emot = emo;
+                  this.handleClick(ev, emot);
+                }}
+                title={emo}
+                color="#ffffff"
+                accessibilityLabel="Learn more about this purple button"
+                />
+          </View>
           )
         });
       }
@@ -492,17 +563,63 @@ class Emotion3Screen extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style= {styles.border}>
         {this.renderElement()}
       </View>
     )
   }
+
 }
 
+const styles = StyleSheet.create ({
 
+  header: {
+    justifyContent: 'center',
+    flex: 1,
+    marginBottom: 5,
+
+  },
+
+  headText: {
+    fontSize: 40,
+    justifyContent: 'center',
+    alignContent: 'center',
+    paddingLeft: 90,
+
+  },
+
+  format: {
+        flex: 1,
+        justifyContent: 'space-between',
+        justifyContent: 'center',
+        backgroundColor: '#f5c278'
+  },
+  emoButton: {
+    justifyContent: 'space-between',
+    justifyContent: 'center',
+    backgroundColor: '#ee7b86',
+    borderRadius: 40,
+    borderWidth: 2,
+    padding: 20,
+    marginTop: 15,
+    marginBottom: 15,
+    marginLeft: 10,
+    marginRight: 10,
+    fontSize: 30,
+  },
+  text: {
+    fontSize: 30,
+  },
+  border: {
+    height: verticalScale(700),
+    backgroundColor: '#f5c278'
+  },
+
+});
 
 Emotion3Screen.propTypes = {
   setEmotion3: PropTypes.func,
+  saveEmotions: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
@@ -516,7 +633,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
       setEmotion3: (emotion3) => dispatch({type: 'EMOTION_3', emote3: emotion3}),
-      saveEmotions: (time) => dispatch({type: 'SAVE_EMOTIONS', time: time})
+      saveEmotions: (time) => dispatch({type: 'SAVE_EMOTIONS', time: time}),
     };
 };
 

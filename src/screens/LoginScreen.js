@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, AsyncStorage } from 'react-native';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import axios from 'axios';
 import bcrypt from 'react-native-bcrypt';
 import PropTypes from 'prop-types';
+import schedule from 'node-schedule'
 
 class LoginScreen extends React.Component {
   constructor(props) {
@@ -15,6 +16,29 @@ class LoginScreen extends React.Component {
       password: '',
       hashPassword: ''
     };
+  }
+
+  componentDidMount() {
+    console.log("Enter this");
+
+    schedule.scheduleJob('*/5 * * * *', () => {
+      console.log("Reset daily check marker at midnight");
+      let check = false;
+      AsyncStorage.setItem('daily_check', JSON.stringify(check))
+      .then(() => {
+        console.log("It was saved successfully");
+      })
+      .catch(() => {
+        console.log("There was an error saving the product");
+      });
+    }); // run everyday at midnight
+
+    console.log("Did this");
+  }
+
+  async getCheck() {
+    let check = await AsyncStorage.getItem('daily_check');
+    return check;
   }
 
   async login(ev) {
@@ -46,7 +70,21 @@ class LoginScreen extends React.Component {
           console.log("Navigating");
           var userObj = { email: this.state.email };
           this.props.logSave(userObj);
-          this.props.navigation.navigate('Emotion1');
+
+          this.getCheck().then((check) => {
+            console.log("check: ", check);
+            let actCheck = JSON.parse(check);
+            console.log("act check: ", actCheck);
+            if (actCheck) {
+              this.props.navigation.navigate('Dashboard');
+            } else {
+              this.props.navigation.navigate('Emotion1');
+            }
+          })
+          .catch(() => {
+            console.log("daily check async storage error");
+          });
+
         }
 
       } else {
