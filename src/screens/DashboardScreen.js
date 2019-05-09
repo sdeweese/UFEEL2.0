@@ -58,7 +58,9 @@ class DashboardScreen extends React.Component {
             }}>
             <View style={styles.view}><Text style= {styles.promptMes}>93.4% of your fellow Broncos have felt overwhelmed by all they had to do, at some point in the past 12 months.</Text></View>
             <View style={styles.view2}><Text style= {styles.promptMes}>46.9% of your fellow Broncos have felt more than average stress in the past 12 months.</Text></View>
-            <View style={styles.view}><Text style= {styles.promptMes}>38.5% of your  fellow Broncos reported that this affected their academic performance.</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>Hardships often prepare ordinary people for an extraordinary destiny. – C.S. Lewis</Text></View>
+            <View style={styles.view2}><Text style= {styles.promptMes}> I learned that courage was not the absence of fear, but the triumph over it. The brave man is not he who does not feel afraid, but he who conquers that fear. – Nelson Mandela</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>If you believe it will work out, you’ll see opportunities. If you believe it won’t, you will see obstacles. – Wayne Dyer</Text></View>
             <View style={styles.view2}><Text style= {styles.promptMes}>63.2% of your fellow Broncos have felt overwhelming anxiety at some point in the last 12 months.</Text></View>
             <View style={styles.view}><Text style= {styles.promptMes}>24.9% of your fellow Broncos reported that this affected their academic performance.</Text></View>
             <View style={styles.view2}><Text style= {styles.promptMes}>78.2 % of your fellow Broncos have used alcohol in the last 30 days.</Text></View>
@@ -124,8 +126,8 @@ class DashboardScreen extends React.Component {
                 type='material-community'
                 color='#5cbc83'
                 size = {45}
-                onPress={() => console.log('hello')} />
-              <Text style= {styles.iconText}>Mental</Text>
+                onPress={() => this.props.navigation.navigate('Wellness')} />
+              <Text style= {styles.iconText}>Wellness</Text>
             </View>
             </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
@@ -141,8 +143,8 @@ class DashboardScreen extends React.Component {
               type='material-community'
               color='#b13ce8'
               size = {45}
-              onPress={() => this.props.navigation.navigate('Safety')} />
-            <Text style= {styles.iconText}>Safety</Text>
+              onPress={() => this.props.navigation.navigate('Help')} />
+            <Text style= {styles.iconText}>Help</Text>
           </View>
           <View>
             <Icon
@@ -171,8 +173,8 @@ class DashboardScreen extends React.Component {
               type='font-awesome'
               color='#2b8221'
               size = {45}
-              onPress={() => console.log('hello')} />
-            <Text style= {styles.iconText}>Podcasts</Text>
+              onPress={() => this.props.navigation.navigate('Podcast')} />
+            <Text style= {styles.iconText}>Media</Text>
           </View>
           </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
@@ -203,7 +205,7 @@ class DashboardScreen extends React.Component {
               type='font-awesome'
               color='#7a7979'
               size = {45}
-              onPress={() => console.log('hello')} />
+              onPress={() => this.props.navigation.navigate('Settings')} />
             <Text style= {styles.iconText}>Settings</Text>
             </View>
             <View>
@@ -284,7 +286,8 @@ class DashboardScreen extends React.Component {
               fontSize: 20,
               justifyContent: 'center',
               alignItems: 'center',
-              padding: 5,
+              paddingTop: 70,
+              padding: 10,
             },
           });
 

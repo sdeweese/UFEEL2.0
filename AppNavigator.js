@@ -13,6 +13,10 @@ import Emotion2 from './src/screens/Emotion2Screen.js';
 import Emotion3 from './src/screens/Emotion3Screen.js';
 import User from './src/screens/UserScreen.js';
 import Entry from './src/screens/EntryScreen.js';
+import Settings from './src/screens/Settings.js';
+import Help from './src/screens/Help.js'
+import Wellness from './src/screens/WellnessScreen.js';
+import Podcast from './src/screens/PodcastScreen.js';
 
 const transitionConfig = () => {
       return {
@@ -82,6 +86,12 @@ const AppNavigator = createStackNavigator({
         title: 'Diary',
       }
     },
+    Help: {
+      screen: Help,
+      navigationOptions: {
+        title: 'Help',
+      }
+    },
     Resource: {
       screen: Resource,
       navigationOptions: {
@@ -124,10 +134,28 @@ const AppNavigator = createStackNavigator({
         title: 'Emotion'
       }
     },
+    Settings: {
+      screen: Settings,
+      navigationOptions: {
+        title: 'Settings'
+      }
+    },
     User: {
       screen: User,
       navigationOptions: {
         title: 'User'
+      }
+    },
+    Wellness: {
+      screen: Wellness,
+      navigationOptions: {
+        title: 'Wellness'
+      }
+    },
+    Podcast: {
+      screen: Podcast,
+      navigationOptions: {
+        title: 'Podcast & Videos'
       }
     },
     Entry: {

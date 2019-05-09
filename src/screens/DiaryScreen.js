@@ -120,7 +120,7 @@ class DiaryScreen extends React.Component {
     inputText: {
       fontFamily: 'Futura',
       fontSize: moderateScale(15),
-      color: 'grey',
+      color: 'black',
       paddingLeft: 15,
       paddingHorizontal: 15,
     },

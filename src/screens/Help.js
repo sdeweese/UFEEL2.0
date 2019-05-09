@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import Communications from 'react-native-communications';
 
-class Safety extends React.Component {
+class Help extends React.Component {
 
   constructor(props) {
     super(props);
@@ -25,7 +25,7 @@ class Safety extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['#71d2a5', '#71d2a5', '#71d2a5']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <LinearGradient colors={['#d5a6d1', '#d5a6d1', '#d5a6d1']} style={styles.background} location={[0.3, 0.4, 1]}>
         <View style= {styles.header}>
           <Text style= {styles.headText}>Emergency Contacts</Text>
         <View>
@@ -59,7 +59,7 @@ class Safety extends React.Component {
           </View>
         </View>
         <View style= {styles.addCont}>
-          <Text style= {styles.addText}>Add new Contact +</Text>
+          <Text style= {styles.addText}>Safety Plan</Text>
         </View>
       </LinearGradient>
     );
@@ -99,7 +99,7 @@ const styles = StyleSheet.create ({
     borderRadius: 15,
     borderWidth: 2,
     borderColor: 'black',
-    backgroundColor: '#d5a6d1',
+    backgroundColor: '#71d2a5',
     padding: 20,
     marginTop: 15,
     marginBottom: 15,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create ({
     borderRadius: 10,
     borderColor: 'black',
     borderWidth: 2,
-    width: 120,
+    width: 80,
     marginTop: 20,
     backgroundColor: '#83d2f0',
   },
@@ -134,4 +134,4 @@ const styles = StyleSheet.create ({
   }
 });
 
-export default Safety;
+export default Help;

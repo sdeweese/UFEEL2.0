@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, AsyncStorage } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Dimensions, AsyncStorage } from 'react-native';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import axios from 'axios';
 import bcrypt from 'react-native-bcrypt';
 import PropTypes from 'prop-types';
 import schedule from 'node-schedule'
+
+const { width } = Dimensions.get('window');
 
 class LoginScreen extends React.Component {
   constructor(props) {
@@ -101,6 +103,10 @@ class LoginScreen extends React.Component {
   render() {
     return (
       <LinearGradient colors={['#3B5998', '#8B9DC3', '#DFE3EE']} style={styles.background} location={[0.3, 0.4, 1]}>
+        <View style = {styles.titleCont}>
+          <Text style = {styles.titleText}>UFEEL</Text>
+        </View>
+
         <View style={styles.container}>
 
           <View style={styles.input}>
@@ -167,6 +173,21 @@ const styles = StyleSheet.create ({
     fontSize: moderateScale(15),
     color: 'white',
     alignSelf: 'center'
+  },
+  titleCont: {
+    width: width,
+    padding: 10,
+    margin: 10,
+  },
+  titleText: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    fontSize: 100,
+    paddingLeft: 50,
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+    color: '#fd9542',
   }
 });
 

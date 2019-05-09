@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import { StyleSheet, Button, FlatList, Dimensions, Text, TextInput, View, TouchableOpacity, Image, Linking, AsyncStorage, Modal, TouchableHighlight, Alert } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
 import PropTypes from 'prop-types';
+import { scale, verticalScale, moderateScale } from '../../scaler.js';
+import { LinearGradient } from 'expo';
 
 const chartConfig = {
-  backgroundGradientFrom: '#1E2923',
-  backgroundGradientTo: '#08130D',
-  color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
+  backgroundColor: '#ffffff',
+  color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
   strokeWidth: 2 // optional, default 3
 }
+ const fill = 'rgb(148, 212, 212 )'
 
 class UserScreen extends React.Component {
   constructor(props) {
@@ -31,11 +33,16 @@ class UserScreen extends React.Component {
   }
 
   render() {
-    const width = Dimensions.get('window').width;
+    const width = Dimensions.get('window').width - 20;
     const height = 220;
     return (
+      <LinearGradient colors={['#f1a377', '#f1a377', '#f1a377']} style={styles.background} location={[0.3, 0.4, 1]}>
+        <View style= {styles.titleContainer}>
+          <Text style= {styles.titleText}>Monthly Emotion Average</Text>
+        </View>
+
       <View>
-        <View>
+        <View style= {styles.graph}>
           <BarChart
                 width={width}
                 height={height}
@@ -44,14 +51,16 @@ class UserScreen extends React.Component {
                 style={styles.graphStyle}
           />
         </View>
-
-        <Button
-          onPress={() => this.props.navigation.navigate('Entry')}
-          title="Diary Entries"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
+        <View style= {styles.buttonContainer}>
+          <Button
+            onPress={() => this.props.navigation.navigate('Entry')}
+            title="Diary Entries"
+            color='black'
+            accessibilityLabel="Learn more about this purple button"
+          />
+        </View>
       </View>
+    </LinearGradient>
     );
   }
 }
@@ -59,13 +68,51 @@ class UserScreen extends React.Component {
 
 
 const styles = StyleSheet.create ({
+  background: {
+    position: 'absolute',
+    flex: 1,
+    left: 0,
+    right: 0,
+    top: 0,
+    height: verticalScale(700),
+    alignItems: 'center',
+  },
   chart: {
     backgroundColor: '#022173',
   },
   graphStyle: {
             marginVertical: 8,
-            borderRadius: 16
+            borderRadius: 16,
+            backgroundColor: 'black',
+  },
+  buttonContainer: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    borderRadius: 15,
+    borderWidth: 2,
+    backgroundColor: '#67b9db',
+    justifyContent: 'space-around',
+    margin: 5,
+    marginLeft: 150,
+    width: 120,
+  },
+
+  graph: {
+    margin: 10,
+    padding: 5,
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  titleText: {
+    fontSize: 25,
+    fontWeight: 'bold',
+  },
+  titleContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   }
+
 });
 
 UserScreen.propTypes = {
