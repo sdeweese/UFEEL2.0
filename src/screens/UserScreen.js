@@ -24,10 +24,6 @@ class UserScreen extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.getDiary();
-  }
-
   setModalVisible(visible) {
     this.setState({modalVisible: visible});
   }
@@ -37,20 +33,15 @@ class UserScreen extends React.Component {
     const height = 220;
     return (
       <LinearGradient colors={['#f1a377', '#f1a377', '#f1a377']} style={styles.background} location={[0.3, 0.4, 1]}>
-        <View style= {styles.titleContainer}>
-          <Text style= {styles.titleText}>Monthly Emotion Average</Text>
-        </View>
-
       <View>
-        <View style= {styles.graph}>
-          <BarChart
-                width={width}
-                height={height}
-                data={this.state.data}
-                chartConfig={chartConfig}
-                style={styles.graphStyle}
-          />
-        </View>
+      <View style= {styles.buttonContainer}>
+        <Button
+          onPress={() => this.props.navigation.navigate('Calendar')}
+          title="Monthly Emotion Tracker"
+          color='black'
+          accessibilityLabel="Learn more about this purple button"
+        />
+      </View>
         <View style= {styles.buttonContainer}>
           <Button
             onPress={() => this.props.navigation.navigate('Entry')}
@@ -129,7 +120,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      getDiary: () => dispatch({type: 'SEND_DIARY'}),
+      // getDiary: () => dispatch({type: 'SEND_DIARY'}),
     };
 };
 

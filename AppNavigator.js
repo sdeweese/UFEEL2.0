@@ -17,6 +17,7 @@ import Settings from './src/screens/Settings.js';
 import Help from './src/screens/Help.js'
 import Wellness from './src/screens/WellnessScreen.js';
 import Podcast from './src/screens/PodcastScreen.js';
+import Calendar from './src/screens/CalendarScreen.js';
 
 const transitionConfig = () => {
       return {
@@ -162,6 +163,12 @@ const AppNavigator = createStackNavigator({
       screen: Entry,
       navigationOptions: {
         title: 'Diary Entries'
+      }
+    },
+    Calendar: {
+      screen: Calendar,
+      navigationOptions: {
+        title: 'Monthly Emotion Tracker'
       }
     }
   },

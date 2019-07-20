@@ -38,7 +38,10 @@ const DiaryReducer = (state = initialState, action) => {
         let stringifiedDiary = JSON.stringify(parsedRes);
 
         saveDiary(stringifiedDiary);
-        diaryEntry.entries = parsedRes;
+        var subTime = new Date();
+        var strTime = subTime.toString();
+        const subObj = {entry: action.entry, time: strTime}
+        diaryEntry.entries.push(subObj);
 
         console.log("diary entry entries in save: ", diaryEntry.entries);
       })

@@ -28,12 +28,13 @@ class DashboardScreen extends React.Component {
       var month = new Date().getMonth() + 1;
       var strmonth = month.toString();
       var emotes1 = this.props.emotion.emotion1;
+      var moodMonth = this.props.emotion.month;
 
       console.log("strmonth in dashboard: ", strmonth);
       console.log("emotes emotion1 in dashboard: ", emotes1);
 
       this.props.addGraph(emotes1, strmonth);
-      this.props.getDiary();
+      // this.props.getDiary();
   }
 
   render() {
@@ -307,7 +308,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
       addGraph: (emotion1, month) => dispatch({type: 'ADD_GRAPH', emotype: emotion1, month: month}),
-      getDiary: () => dispatch({type: 'SEND_DIARY'}),
+      // getDiary: () => dispatch({type: 'SEND_DIARY'}),
     };
 };
 

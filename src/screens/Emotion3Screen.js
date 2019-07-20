@@ -48,9 +48,15 @@ class Emotion3Screen extends React.Component {
     ev.preventDefault();
 
     this.props.setEmotion3(emo);
+
     var date = new Date();
 
-    this.props.saveEmotions(date);
+    var month = new Date().getMonth() + 1;
+    var strmonth = month.toString();
+
+    console.log("strmonth in emotion3: ", strmonth);
+
+    this.props.saveEmotions(date, strmonth);
 
     var check = true;
 
@@ -633,7 +639,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
       setEmotion3: (emotion3) => dispatch({type: 'EMOTION_3', emote3: emotion3}),
-      saveEmotions: (time) => dispatch({type: 'SAVE_EMOTIONS', time: time}),
+      saveEmotions: (time, month) => dispatch({type: 'SAVE_EMOTIONS', time: time, month: month}),
     };
 };
 

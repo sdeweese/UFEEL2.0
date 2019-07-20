@@ -4,7 +4,9 @@ let initialState = {
   emotion1: "",
   emotion2: "",
   emotion3: "",
-  time: ""
+  time: "",
+  month: "",
+  emotes: []
 }
 
 getData = async () => {
@@ -40,6 +42,7 @@ const EmoteReducer = (state = initialState, action) => {
     case 'SAVE_EMOTIONS':
       const emotions = Object.assign({}, state);
       emotions.time = action.time;
+      emotions.month = action.month;
 
       console.log("Emotions from save_emotions: ", emotions);
 
@@ -55,6 +58,7 @@ const EmoteReducer = (state = initialState, action) => {
         console.log("Emotions in getData: ", emotions);
 
         currentData.push(emotions);
+        emotions.emotes = currentData;
         console.log("New data: ", currentData);
         let stringData = JSON.stringify(currentData);
         saveData(stringData);
