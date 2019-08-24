@@ -14,9 +14,10 @@ import Emotion3 from './src/screens/Emotion3Screen.js';
 import User from './src/screens/UserScreen.js';
 import Entry from './src/screens/EntryScreen.js';
 import Settings from './src/screens/Settings.js';
-import Help from './src/screens/Help.js'
+import Help from './src/screens/Help.js';
 import Wellness from './src/screens/WellnessScreen.js';
 import Podcast from './src/screens/PodcastScreen.js';
+// import PinWindow from './src/screens/PinScreen.js';
 import Calendar from './src/screens/CalendarScreen.js';
 
 const transitionConfig = () => {
@@ -170,7 +171,13 @@ const AppNavigator = createStackNavigator({
       navigationOptions: {
         title: 'Monthly Emotion Tracker'
       }
-    }
+    },
+    // Pins: {
+    //   screen: Pin,
+    //   navigationOptions: {
+    //     title: 'Monthly Emotion Tracker'
+    //   }
+    // }
   },
   {
     initialRouteName: "Emotion1",

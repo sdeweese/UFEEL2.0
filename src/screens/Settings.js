@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, Platform } from 'react-native';
+import { connect } from 'react-redux';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, Platform, AsyncStorage } from 'react-native';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import Communications from 'react-native-communications';
+import PropTypes from 'prop-types';
 
-class Settings extends React.Component {
+class SettingScreen extends React.Component {
 
   constructor(props) {
     super(props);
@@ -23,12 +25,20 @@ class Settings extends React.Component {
     Linking.openURL(`tel:${phoneNumber}`)
   }*/
 
+  changeCode(e) {
+    e.preventDefault();
+
+    this.props.navigation.navigate('Pins');
+  }
+
   render() {
     return (
       <LinearGradient colors={['#6f6e6e', '#6f6e6e', '#6f6e6e']} style={styles.background} location={[0.3, 0.4, 1]}>
       <View style= {styles.top}>
         <View style= {styles.cont}><Text style= {styles.text1}>Change Password</Text></View>
-        <View style= {styles.cont}><Text style= {styles.text1}>Change User Code</Text></View>
+        <TouchableOpacity onPress={(ev) => this.changeCode(ev)}>
+          <View style= {styles.cont}><Text style= {styles.text1}>Set or Change User Code</Text></View>
+        </TouchableOpacity>
         <View style= {styles.cont}><Text style= {styles.text1}>Logout           </Text></View>
       </View>
       </LinearGradient>
@@ -68,5 +78,28 @@ const styles = StyleSheet.create ({
   }
 
 });
+
+SettingScreen.propTypes = {
+  setCode: PropTypes.func
+};
+
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return {
+      code: state.code
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      addCode: (code) => dispatch({type: 'ADD_CODE', code: code}),
+      // getDiary: () => dispatch({type: 'SEND_DIARY'}),
+    };
+};
+
+const Settings = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SettingScreen);
 
 export default Settings;
