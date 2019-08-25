@@ -34,7 +34,7 @@ class DiaryScreen extends React.Component {
             <Text style= {styles.mesText}>How are you feeling today?</Text>
           </View>
           <View style= {styles.mes}>
-            <Text style= {styles.prompt}>Use these prompts, one at a time and users swipe right for new prompts and left to go back to old ones</Text>
+            <Text style= {styles.prompt}>For inspiration, try using one of these prompts</Text>
           </View>
           <ScrollView
             ref={(scrollView) => { this.scrollView = scrollView; }}
@@ -74,7 +74,7 @@ class DiaryScreen extends React.Component {
             }}
             style={styles.inputText}
             value={this.state.text}
-            placeholder={'...............'}
+            placeholder={'Share your thoughts here'}
           />
           </View>
           <View style = {styles.submit}>
@@ -131,7 +131,7 @@ class DiaryScreen extends React.Component {
       borderColor: '#692ffc',
       borderWidth: 2,
       backgroundColor: 'white',
-      //justifyContent: 'flex-start',
+      justifyContent: 'flex-start',
       marginLeft: 10,
       borderRadius: 10,
 

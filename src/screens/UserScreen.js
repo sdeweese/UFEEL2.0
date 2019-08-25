@@ -11,7 +11,7 @@ const chartConfig = {
   color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
   strokeWidth: 2 // optional, default 3
 }
- const fill = 'rgb(148, 212, 212 )'
+ const fill = 'rgb(148, 212, 212)'
 
 class UserScreen extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class UserScreen extends React.Component {
 
   render() {
     const width = Dimensions.get('window').width - 20;
-    const height = 220;
+    const height = Dimensions.get('window').height - 20;
     return (
       <LinearGradient colors={['#f1a377', '#f1a377', '#f1a377']} style={styles.background} location={[0.3, 0.4, 1]}>
       <View>
@@ -61,20 +61,19 @@ class UserScreen extends React.Component {
 const styles = StyleSheet.create ({
   background: {
     position: 'absolute',
-    flex: 1,
     left: 0,
     right: 0,
     top: 0,
-    height: verticalScale(700),
+    height: verticalScale(650),
     alignItems: 'center',
   },
   chart: {
     backgroundColor: '#022173',
   },
   graphStyle: {
-            marginVertical: 8,
-            borderRadius: 16,
-            backgroundColor: 'black',
+    marginVertical: 8,
+    borderRadius: 16,
+    backgroundColor: 'black',
   },
   buttonContainer: {
     justifyContent: 'center',
@@ -84,10 +83,11 @@ const styles = StyleSheet.create ({
     backgroundColor: '#67b9db',
     justifyContent: 'space-around',
     margin: 5,
-    marginLeft: 150,
-    width: 120,
+    marginTop: 5,
+    marginBottom: 5,
+    marginLeft: 5,
+    marginRight: 5,
   },
-
   graph: {
     margin: 10,
     padding: 5,
