@@ -22,7 +22,7 @@ class Resource extends React.Component {
               <View style= {styles.format1}>
                 <View>
                   <TouchableOpacity onPress={() => this.props.navigation.navigate('Caps')}>
-                    <Text style= {styles.title}> CAPS</Text>
+                    <Text style= {styles.title}>CAPS</Text>
                     <Text style= {styles.link}>
                     "The mission of Counseling and Psychological Services (CAPS) is to support students and student learning by providing quality counseling services to students and consultation and outreach programs to the campus community."
                     </Text>

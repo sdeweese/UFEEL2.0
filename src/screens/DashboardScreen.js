@@ -165,7 +165,7 @@ class DashboardScreen extends React.Component {
                 color='#436ce8'
                 size = {45}
                 onPress={() => this.props.navigation.navigate('Diary')} />
-              <Text style= {styles.iconText}>Diary</Text>
+              <Text style= {styles.iconText}>Thoughts</Text> 
               </View>
               <View>
               <Icon
@@ -213,24 +213,9 @@ class DashboardScreen extends React.Component {
               color='#e56b20'
               size = {45}
               onPress={() => this.props.navigation.navigate('User')} />
-            <Text style= {styles.iconText}>User</Text>
+            <Text style= {styles.iconText}>Calendar</Text>
           </View>
-          <View>
-            <Icon
-              raised
-              containerStyle={{
-                marginTop: 5,
-                marginRight: 5,
-                marginBottom: 5,
-                marginleft: 5,}}
-              name='podcast'
-              type='font-awesome'
-              color='#2b8221'
-              size = {45}
-              onPress={() => this.props.navigation.navigate('Podcast')} />
-            <Text style= {styles.iconText}>Media</Text>
-          </View>
-          </View>
+           </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
           <View>
             <Icon
@@ -247,7 +232,23 @@ class DashboardScreen extends React.Component {
               onPress={() => this.props.navigation.navigate('Settings')} />
             <Text style= {styles.iconText}>Settings</Text>
             </View>
-            <View>
+         {/*<View>
+            <Icon
+              raised
+              containerStyle={{
+                marginTop: 5,
+                marginRight: 5,
+                marginBottom: 5,
+                marginleft: 5,}}
+              name='podcast'
+              type='font-awesome'
+              color='#2b8221'
+              size = {45}
+              onPress={() => this.props.navigation.navigate('Podcast')} />
+            <Text style= {styles.iconText}>Media</Text>
+          </View>*/}
+        
+			     {/*<View>
             <Icon
               raised
               containerStyle={{
@@ -259,9 +260,9 @@ class DashboardScreen extends React.Component {
               type='font-awesome'
               color='#11afa5'
               size = {45}
-              onPress={() => this.props.navigation.navigate('Safety')} />
-            <Text style= {styles.iconText}>Contacts</Text>
-            </View>
+              onPress={() => this.props.navigation.navigate('Safety')} /> 
+            <Text style= {styles.iconText}>Contacts</Text> 
+            </View> */}
           </View>
         </View>
       </LinearGradient>

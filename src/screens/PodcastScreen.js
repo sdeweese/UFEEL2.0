@@ -68,7 +68,7 @@ class PodcastScreen extends React.Component {
                 <Text style= {styles.text1}>Just Eat More</Text>
                 <Text style= {styles.text2}></Text>
               </TouchableOpacity>
-            </View>
+            </View> 
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=Sdk7pLpbIls');}}>
                 <Text style= {styles.text1}>Athletes and Mental Health</Text>

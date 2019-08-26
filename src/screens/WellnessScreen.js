@@ -19,7 +19,6 @@ class WellnessScreen extends React.Component {
       <LinearGradient colors={['#60bb85', '#60bb85', '#60bb85']} style={styles.background} location={[0.3, 0.4, 1]}>
       <ScrollView>
         <View style= {styles.header}>
-          <Text style= {styles.headText}>Wellness Resources</Text>
           <View>
             <View style= {styles.headContain}>
               <Text style= {styles.subHead}>Meditation Apps</Text>
@@ -63,7 +62,63 @@ class WellnessScreen extends React.Component {
                 <Text style= {styles.text2}>"Source for books on mental health and anxiety"</Text>
               </TouchableOpacity>
             </View>
+            <View>
+            <View style= {styles.headContain}>
+              <Text style= {styles.subHead}>Spotify Podcasts</Text>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={() => Linking.openURL('https://open.spotify.com/show/0184ojF3hjFhKfktahQK4G?si=UbCvKkcJRzO1pes2MIJHhA')}>
+                <Text style= {styles.text1}>Savvy Psychologist</Text>
+                <Text style= {styles.text2}>"She is like listening to a well informed aunt give advice"</Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://open.spotify.com/show/464IOIGOsIUZPDV7ani1VB?si=zz-oqbDQR7urfq4lMht1BA');}}>
+                <Text style= {styles.text1}>Black Mental Health</Text>
+                <Text style= {styles.text2}>"Provides an African American lense to mental"</Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://open.spotify.com/show/2zS57s6LwstXGD9gkoKWsC?si=LRWJVGB8RoibxSQKTfTncA');}}>
+                <Text style= {styles.text1}>Mental health in Pop culture</Text>
+                <Text style= {styles.text2}>"Professor and students analyze the sort of normalization of mental health issues in movies/ media/ television. Could be good to break stereotypes"</Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.headContain}>
+              <Text style= {styles.subHead}>YouTube Videos</Text>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.youtube.com/watch?v=S8bJ3YlgL1Q')}>
+                <Text style= {styles.text1}>Casually suicidal</Text>
+                <Text style= {styles.text2}>"TEDx talk, Adelphi Univ"</Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=m-8tQ_TYLgk');}}>
+                <Text style= {styles.text1}>How to connect with depressed friends</Text>
+                <Text style= {styles.text2}></Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=JUedQ0_EGCQ');}}>
+                <Text style= {styles.text1}>Living With High Functioning Anxiety</Text>
+                <Text style= {styles.text2}></Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=2E4_m5dUE9s');}}>
+                <Text style= {styles.text1}>Just Eat More</Text>
+                <Text style= {styles.text2}></Text>
+              </TouchableOpacity>
+            </View> 
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=Sdk7pLpbIls');}}>
+                <Text style= {styles.text1}>Athletes and Mental Health</Text>
+                <Text style= {styles.text2}></Text>
+              </TouchableOpacity>
+            </View>
           </View>
+        </View>
         </View>
         </ScrollView>
       </LinearGradient>
