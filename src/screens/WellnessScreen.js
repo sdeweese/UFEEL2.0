@@ -15,9 +15,14 @@ class WellnessScreen extends React.Component {
 
   render() {
     return (
-      <View style ={{flex: 1}}>
+     <View style= {{flex: 1}}>
       <LinearGradient colors={['#60bb85', '#60bb85', '#60bb85']} style={styles.background} location={[0.3, 0.4, 1]}>
-      <ScrollView>
+        <ScrollView
+            contentContainerStyle={{
+              maxheight: 1000,
+              bounce: true
+            }}
+            showsHorizontalScrollIndicator={true}>
         <View style= {styles.header}>
           <View>
             <View style= {styles.headContain}>
@@ -129,7 +134,6 @@ class WellnessScreen extends React.Component {
 }
 
 const styles = StyleSheet.create ({
-
   headText: {
     fontSize: 30,
     fontWeight: 'bold',

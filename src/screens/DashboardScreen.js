@@ -85,6 +85,7 @@ class DashboardScreen extends React.Component {
       this.props.addGraph(emotes1, strmonth);
       // this.props.getDiary();
 
+      //TODO: create an array to store these elements, so it's easier to add more!
       first = Math.floor(Math.random() * this.state.quotes.length);
       second = Math.floor(Math.random() * this.state.quotes.length);
 
