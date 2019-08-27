@@ -20,8 +20,9 @@ class DiaryScreen extends React.Component {
 
   handleSave(ev) {
     ev.preventDefault();
-
-    this.props.saveDiary(this.state.text);
+    if(this.state.text.localeCompare("") != 0) { // 0 = an exact match
+      this.props.saveDiary(this.state.text);
+    }
 
     // this.props.getDiary();
     this.props.navigation.navigate('Dashboard');

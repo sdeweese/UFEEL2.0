@@ -18,13 +18,13 @@ class WellnessScreen extends React.Component {
      <View style= {{flex: 1}}>
       <LinearGradient colors={['#60bb85', '#60bb85', '#60bb85']} style={styles.background} location={[0.3, 0.4, 1]}>
         <ScrollView
+            ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
-              maxheight: 1000,
-              bounce: true
+              maxheight: 1000
             }}
             showsHorizontalScrollIndicator={true}>
         <View style= {styles.header}>
-          <View>
+          <View style= {{flex: 1}}>
             <View style= {styles.headContain}>
               <Text style= {styles.subHead}>Meditation Apps</Text>
             </View>
@@ -67,7 +67,6 @@ class WellnessScreen extends React.Component {
                 <Text style= {styles.text2}>"Source for books on mental health and anxiety"</Text>
               </TouchableOpacity>
             </View>
-            <View>
             <View style= {styles.headContain}>
               <Text style= {styles.subHead}>Spotify Podcasts</Text>
             </View>
@@ -122,7 +121,6 @@ class WellnessScreen extends React.Component {
                 <Text style= {styles.text2}></Text>
               </TouchableOpacity>
             </View>
-          </View>
         </View>
         </View>
         </ScrollView>
@@ -170,6 +168,7 @@ const styles = StyleSheet.create ({
     marginBottom: 15,
     marginLeft: 10,
     marginRight: 10,
+    flex: 1,
   },
   text1: {
     fontSize: 20,

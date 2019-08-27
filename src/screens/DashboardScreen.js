@@ -85,7 +85,7 @@ class DashboardScreen extends React.Component {
       this.props.addGraph(emotes1, strmonth);
       // this.props.getDiary();
 
-      //TODO: create an array to store these elements, so it's easier to add more!
+      //TODO: create an array (length 5) o store these elements, so it's easier to add more!
       first = Math.floor(Math.random() * this.state.quotes.length);
       second = Math.floor(Math.random() * this.state.quotes.length);
 
@@ -108,7 +108,7 @@ class DashboardScreen extends React.Component {
 
   render() {
       return (
-        <LinearGradient colors={['#fada5e','#fada5e']} style={styles.background}>
+        <LinearGradient colors={['#fada5e','#B2878E']} style={styles.background}>
           <ScrollView
             ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
@@ -216,7 +216,6 @@ class DashboardScreen extends React.Component {
               onPress={() => this.props.navigation.navigate('User')} />
             <Text style= {styles.iconText}>Calendar</Text>
           </View>
-           </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
           <View>
             <Icon
@@ -232,6 +231,7 @@ class DashboardScreen extends React.Component {
               size = {45}
               onPress={() => this.props.navigation.navigate('Settings')} />
             <Text style= {styles.iconText}>Settings</Text>
+            </View>
             </View>
          {/*<View>
             <Icon
@@ -309,7 +309,6 @@ class DashboardScreen extends React.Component {
               borderRadius: 10,
               //paddingHorizontal : 30
             },
-
             quotes: {
               fontSize: 20,
               fontFamily: 'Cochin',
