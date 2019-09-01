@@ -1,7 +1,9 @@
+*package*.json
 node_modules/**/*
 .expo/*
 npm-debug.*
 *.jks
 *.p12
 *.key
-*.mobileprovision
+*.mobileprovisio
+*.DS_Store

@@ -10,10 +10,13 @@ class Help extends React.Component {
     super(props);
 
     this.state = {
-
+      trial: ''
     };
   }
-
+ 
+ updateText = () => {
+      this.setState({trial: 'My Changed Text'})
+ }
   /*call(ev) {
     ev.preventDefault();
     /*var phoneNumber[0] = '4085544444'
@@ -60,6 +63,8 @@ class Help extends React.Component {
         </View>
         <View style= {styles.addCont}>
           <Text style= {styles.addText}>Safety Plan</Text>
+          <Text onPress={this.updateText} style= {styles.headText}> {this.state.trial} </Text>
+
         </View>
       </LinearGradient>
     );

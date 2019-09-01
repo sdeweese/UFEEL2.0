@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Dimensions, ScrollView, AsyncStorage } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Dimensions, ScrollView, ListView, AsyncStorage } from 'react-native';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import { SketchPicker } from 'react-color';
@@ -17,6 +17,8 @@ getData = async () => {
 var first;
 var second;
 var third;
+var fourth;
+var fifth;
 
 class DashboardScreen extends React.Component {
   constructor(props) {
@@ -68,7 +70,9 @@ class DashboardScreen extends React.Component {
 "“What we think, we become.” - Buddha"],
       firstQuote: "",
       secondQuote: "",
-      thirdQuote: ""
+      thirdQuote: "",
+      fourthQuote: "",
+      fifthQuote: "",
     };
   }
 
@@ -85,7 +89,7 @@ class DashboardScreen extends React.Component {
       this.props.addGraph(emotes1, strmonth);
       // this.props.getDiary();
 
-      //TODO: create an array (length 5) o store these elements, so it's easier to add more!
+      //TODO: create an array (length 5) to store these elements, so it's easier to add more!
       first = Math.floor(Math.random() * this.state.quotes.length);
       second = Math.floor(Math.random() * this.state.quotes.length);
 
@@ -99,16 +103,30 @@ class DashboardScreen extends React.Component {
         third = Math.floor(Math.random() * this.state.quotes.length);
       }
 
+      fourth = Math.floor(Math.random() * this.state.quotes.length);
+
+      while (fourth === third || fourth === second || fourth === first) {
+        fourth = Math.floor(Math.random() * this.state.quotes.length);
+      }
+
+      fifth = Math.floor(Math.random() * this.state.quotes.length);
+
+      while (fifth === fourth || fifth === third || fifth === second || fifth === first) {
+        fifth = Math.floor(Math.random() * this.state.quotes.length);
+      }
+
       this.setState({
         firstQuote: this.state.quotes[first],
         secondQuote: this.state.quotes[second],
-        thirdQuote: this.state.quotes[third]
+        thirdQuote: this.state.quotes[third],
+        fourthQuote: this.state.quotes[fourth],
+        fifthQuote: this.state.quotes[fifth]
       });
   }
 
   render() {
       return (
-        <LinearGradient colors={['#fada5e','#B2878E']} style={styles.background}>
+        <LinearGradient colors={['#7BA9C7','#7BA9C7']} style={styles.background}>
           <ScrollView
             ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
@@ -127,10 +145,14 @@ class DashboardScreen extends React.Component {
               right: 30,
             }}>
             <View style={styles.view}><Text style= {styles.promptMes}>{this.state.quotes[first]}</Text></View>
-            <View style={styles.view2}><Text style= {styles.promptMes}>{this.state.quotes[second]}</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>{this.state.quotes[second]}</Text></View>
             <View style={styles.view}><Text style= {styles.promptMes}>{this.state.quotes[third]}</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>{this.state.quotes[fourth]}</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>{this.state.quotes[fifth]}</Text></View>
+
+          
           </ScrollView>
-        <View style={{flex: 2, flexDirection: 'column', justifyContent: 'space-evenly', bottom: 200, width}}>
+        <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', bottom: 200, width}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
             <View>
               <Icon
@@ -143,7 +165,7 @@ class DashboardScreen extends React.Component {
                 }}
                 name='plus-square'
                 type='font-awesome'
-                color='#e03c42'
+                color='#7BA9C7'
                 size = {45}
                 borderStyle= 'solid'
                 borderWidth= {2}
@@ -163,7 +185,7 @@ class DashboardScreen extends React.Component {
                 }}
                 name='pencil'
                 type='font-awesome'
-                color='#436ce8'
+                color='#7BA9C7'
                 size = {45}
                 onPress={() => this.props.navigation.navigate('Diary')} />
               <Text style= {styles.iconText}>Thoughts</Text> 
@@ -179,12 +201,12 @@ class DashboardScreen extends React.Component {
                 }}
                 name='flower'
                 type='material-community'
-                color='#5cbc83'
+                color='#7BA9C7'
                 size = {45}
                 onPress={() => this.props.navigation.navigate('Wellness')} />
               <Text style= {styles.iconText}>Wellness</Text>
             </View>
-            </View>
+        </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
           <View>
             <Icon
@@ -196,7 +218,7 @@ class DashboardScreen extends React.Component {
                 marginleft: 5,}}
               name='human-greeting'
               type='material-community'
-              color='#b13ce8'
+              color='#7BA9C7'
               size = {45}
               onPress={() => this.props.navigation.navigate('Help')} />
             <Text style= {styles.iconText}>Help</Text>
@@ -209,9 +231,9 @@ class DashboardScreen extends React.Component {
                 marginRight: 5,
                 marginBottom: 5,
                 marginleft: 5,}}
-              name='user'
+              name='calendar' 
               type='font-awesome'
-              color='#e56b20'
+              color='#7BA9C7'
               size = {45}
               onPress={() => this.props.navigation.navigate('User')} />
             <Text style= {styles.iconText}>Calendar</Text>
@@ -227,7 +249,7 @@ class DashboardScreen extends React.Component {
                 marginleft: 5,}}
               name='cog'
               type='font-awesome'
-              color='#7a7979'
+              color='#7BA9C7'
               size = {45}
               onPress={() => this.props.navigation.navigate('Settings')} />
             <Text style= {styles.iconText}>Settings</Text>
@@ -243,7 +265,7 @@ class DashboardScreen extends React.Component {
                 marginleft: 5,}}
               name='podcast'
               type='font-awesome'
-              color='#2b8221'
+              color='#7BA9C7'
               size = {45}
               onPress={() => this.props.navigation.navigate('Podcast')} />
             <Text style= {styles.iconText}>Media</Text>
@@ -259,7 +281,7 @@ class DashboardScreen extends React.Component {
                 marginleft: 5,}}
               name='phone'
               type='font-awesome'
-              color='#11afa5'
+              color='#7BA9C7'
               size = {45}
               onPress={() => this.props.navigation.navigate('Safety')} /> 
             <Text style= {styles.iconText}>Contacts</Text> 
@@ -302,7 +324,7 @@ class DashboardScreen extends React.Component {
             },
             view2: {
               marginTop: 50,
-              backgroundColor: 'rgba(221,160,221, 0.8)',
+              backgroundColor: 'rgba(221,160,221,0.8)',
               width: width - 80,
               margin: 10,
               height: 240,
@@ -319,7 +341,7 @@ class DashboardScreen extends React.Component {
               textAlign: 'center',
               width: 110,
               fontSize: 20,
-              color: '#1d14c9'
+              color: '#ffffff'
             },
             promptMes: {
               flex: 1,

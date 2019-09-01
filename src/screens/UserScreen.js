@@ -45,7 +45,7 @@ class UserScreen extends React.Component {
         <View style= {styles.buttonContainer}>
           <Button
             onPress={() => this.props.navigation.navigate('Entry')}
-            title="Diary Entries"
+            title="My Thoughts"
             color='black'
             accessibilityLabel="Learn more about this purple button"
           />

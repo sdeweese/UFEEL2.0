@@ -20,9 +20,11 @@ class WellnessScreen extends React.Component {
         <ScrollView
             ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
-              maxheight: 1000
+              maxheight: 1000,
             }}
-            showsHorizontalScrollIndicator={true}>
+            scrollToOverflowEnabled={true}> 
+        
+            
         <View style= {styles.header}>
           <View style= {{flex: 1}}>
             <View style= {styles.headContain}>
@@ -30,18 +32,21 @@ class WellnessScreen extends React.Component {
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={() => Linking.openURL('https://itunes.apple.com/us/app/headspace-meditation-sleep/id493145008?mt=8')}>
+                <Image source={require("./app-icons/headspace.jpg")} style={styles.img} />
                 <Text style= {styles.text1}>Headspace</Text>
                 <Text style= {styles.text2}>"Headspace is your guide to health and happiness. It’s the simple way to let go of stress and get a better night’s rest. Learn to relax with guided meditations and mindfulness techniques that bring calm, wellness and balance to your life in just a few minutes a day."</Text>
               </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://itunes.apple.com/us/app/calm/id571800810?mt=8');}}>
+                <Image source={require("./app-icons/calm.jpg")} style={styles.img} />
                 <Text style= {styles.text1}>Calm</Text>
                 <Text style= {styles.text2}>"Calm is the #1 app for Sleep, Meditation and Relaxation. Join the millions experiencing better sleep, lower stress, and less anxiety with our guided meditations, Sleep Stories, breathing programs, stretching exercises, and relaxing music. Calm is recommended by top psychologists, therapists, and mental health experts."</Text>
               </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://itunes.apple.com/us/app/moodpath-depression-anxiety/id1052216403?mt=8');}}>
+                <Image source={require("./app-icons/moodpath.jpg")} style={styles.img} />
                 <Text style= {styles.text1}>Moodpath</Text>
                 <Text style= {styles.text2}>"Do you struggle with some of your thoughts and feelings? Are you looking for ways to improve your emotional well-being? Moodpath is your personalized mental health companion. Try it out and find a place to reflect and get information, encouragement, and guidance."</Text>
               </TouchableOpacity>
@@ -180,6 +185,10 @@ const styles = StyleSheet.create ({
   headContain: {
     justifyContent: 'center',
     flexDirection: 'row',
+  },
+  img: {
+    height: 50,
+    width: 50,
   }
 
 });
