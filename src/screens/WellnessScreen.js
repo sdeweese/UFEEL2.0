@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, ScrollView, Platform } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, ScrollView, Platform, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
+
+const { height } = Dimensions.get('window');
 
 class WellnessScreen extends React.Component {
 
@@ -23,33 +25,31 @@ class WellnessScreen extends React.Component {
               maxheight: 1000,
             }}
             scrollToOverflowEnabled={true}> 
-        
-            
         <View style= {styles.header}>
           <View style= {{flex: 1}}>
             <View style= {styles.headContain}>
               <Text style= {styles.subHead}>Meditation Apps</Text>
             </View>
             <View style= {styles.cont}>
-              <TouchableOpacity onPress={() => Linking.openURL('https://itunes.apple.com/us/app/headspace-meditation-sleep/id493145008?mt=8')}>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.headspace.com/headspace-meditation-app')}>
                 <Image source={require("./app-icons/headspace.jpg")} style={styles.img} />
+              </TouchableOpacity>
                 <Text style= {styles.text1}>Headspace</Text>
                 <Text style= {styles.text2}>"Headspace is your guide to health and happiness. It’s the simple way to let go of stress and get a better night’s rest. Learn to relax with guided meditations and mindfulness techniques that bring calm, wellness and balance to your life in just a few minutes a day."</Text>
-              </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
-              <TouchableOpacity onPress={()=>{Linking.openURL('https://itunes.apple.com/us/app/calm/id571800810?mt=8');}}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://www.calm.com/');}}>
                 <Image source={require("./app-icons/calm.jpg")} style={styles.img} />
+              </TouchableOpacity>
                 <Text style= {styles.text1}>Calm</Text>
                 <Text style= {styles.text2}>"Calm is the #1 app for Sleep, Meditation and Relaxation. Join the millions experiencing better sleep, lower stress, and less anxiety with our guided meditations, Sleep Stories, breathing programs, stretching exercises, and relaxing music. Calm is recommended by top psychologists, therapists, and mental health experts."</Text>
-              </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
-              <TouchableOpacity onPress={()=>{Linking.openURL('https://itunes.apple.com/us/app/moodpath-depression-anxiety/id1052216403?mt=8');}}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://mymoodpath.com/en/');}}>
                 <Image source={require("./app-icons/moodpath.jpg")} style={styles.img} />
+              </TouchableOpacity>
                 <Text style= {styles.text1}>Moodpath</Text>
                 <Text style= {styles.text2}>"Do you struggle with some of your thoughts and feelings? Are you looking for ways to improve your emotional well-being? Moodpath is your personalized mental health companion. Try it out and find a place to reflect and get information, encouragement, and guidance."</Text>
-              </TouchableOpacity>
             </View>
             <View style= {styles.headContain}>
               <Text style= {styles.subHead}>Books and Info</Text>
@@ -105,25 +105,21 @@ class WellnessScreen extends React.Component {
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=m-8tQ_TYLgk');}}>
                 <Text style= {styles.text1}>How to connect with depressed friends</Text>
-                <Text style= {styles.text2}></Text>
               </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=JUedQ0_EGCQ');}}>
                 <Text style= {styles.text1}>Living With High Functioning Anxiety</Text>
-                <Text style= {styles.text2}></Text>
               </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=2E4_m5dUE9s');}}>
                 <Text style= {styles.text1}>Just Eat More</Text>
-                <Text style= {styles.text2}></Text>
               </TouchableOpacity>
             </View> 
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=Sdk7pLpbIls');}}>
                 <Text style= {styles.text1}>Athletes and Mental Health</Text>
-                <Text style= {styles.text2}></Text>
               </TouchableOpacity>
             </View>
         </View>
@@ -160,7 +156,7 @@ const styles = StyleSheet.create ({
     left: 0,
     right: 0,
     top: 0,
-    height: verticalScale(700),
+    height: height, /*verticalScale(700),*/
     alignItems: 'center',
   },
   cont: {
@@ -173,7 +169,7 @@ const styles = StyleSheet.create ({
     marginBottom: 15,
     marginLeft: 10,
     marginRight: 10,
-    flex: 1,
+    
   },
   text1: {
     fontSize: 20,
