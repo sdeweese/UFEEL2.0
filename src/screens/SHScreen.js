@@ -8,19 +8,18 @@ class Shs extends React.Component {
     super(props);
 
     this.state = {
-      shsummary: "The Cowell Center Student Health Services is applying for accreditation through the Accreditation Association for Ambulatory Health Care, Inc. We are staffed by licensed and/or board-certified nurse practitioners, a physician, a physician assistant, a dietitian and nurses who will address your needs in a sensitive, compassionate and confidential manner. \nThe campus physician, nurse practitioners, and physician assistant see students by appointment and will see walk-in students with urgent needs. \nThe nursing staff is available during all open hours to assist students with less urgent health care concerns. In addition to our regular staff, we offer appointments with specialists including a physical therapist assistant and a registered dietitian.",
-      afterBusinessHours: "Contact SCU EMS for emergencies. Every day of the academic year from 5:00pm to 8:00am (except holidays, academic breaks and finals week).",
+      shsummary: "The Cowell Center Student Health Services is applying for accreditation through the Accreditation Association for Ambulatory Health Care, Inc. We are staffed by licensed and/or board-certified nurse practitioners, a physician, a physician assistant, a dietitian and nurses who will address your needs in a sensitive, compassionate and confidential manner. The campus physician, nurse practitioners, and physician assistant see students by appointment and will see walk-in students with urgent needs. The nursing staff is available during all open hours to assist students with less urgent health care concerns. In addition to our regular staff, we offer appointments with specialists including a physical therapist assistant and a registered dietitian.",
+      shsMission: "Student Health Services seeks to participate in and support the vision of the University to make student learning its central focus. The health services is committed to delivering quality health care to students and helping to preserve their ability to function at their full potential.",
       nurseContact: "Contact Nurse Advice Line for medical advice and/or inquiries",
       closure: "The Student Health Services is closed during summer and all University holidays.",
     };
   }
 
-  contact(ev) {
+  /*contact(ev) {
     ev.preventDefault();
 
     Alert.alert(
-      'Alert Title',
-      'My Alert Msg',
+      'Contact SCU EMS',
       [
         {
           text: 'Emergency Call',
@@ -38,13 +37,7 @@ class Shs extends React.Component {
       ],
       {cancelable: false},
     );
-  }
-
-  linkems(ev) {
-    ev.preventDefault();
-
-    Linking.openURL('https://www.scu.edu/cowell/emergency-medical-services/');
-  }
+  }*/
 
   linkshs(ev) {
     ev.preventDefault();
@@ -59,31 +52,15 @@ class Shs extends React.Component {
           <Text style={styles.titleText}>Student Health Services</Text>
         </View>
         <View style= {styles.format}>
+          <View style= {styles.info}>
             <Text style= {styles.text}>{this.state.shsummary}</Text>
-            <Text style= {styles.contact}>After Business Hours</Text>
-            <View style= {styles.info}>
-              <Text style= {styles.text1}>{this.state.afterBusinessHours}</Text>
-            </View>
-            <View style={{ flexDirection: 'row' }}>
-              <View style= {styles.buttonContainer}>
-                <TouchableOpacity onPress={(ev) => this.contact(ev)} style= {styles.button}>
-                  <View style= {styles.button1}>
-                    <Text style= {styles.butText}>Contact SCU EMS</Text>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={(ev) => this.linkems(ev)} style= {styles.button}>
-                  <View style= {styles.button1}>
-                    <Text style= {styles.butText}>SCU EMS Information</Text>
-                  </View>
-                </TouchableOpacity>
-              </View>
-            </View>
-            <View style= {styles.contact}>
-              <Text style= {styles.contact}>Student Health Services Contact</Text>
-            </View>
-            <View style= {styles.info}>
-              <Text style= {styles.text1}>{this.state.nurseContact}</Text>
-            </View>
+          </View>
+          <View style= {styles.info}>
+            <Text style= {styles.text}>{this.state.shsMission}</Text>
+          </View>
+          <View style= {styles.info}>
+            <Text style= {styles.text}>{this.state.nurseContact}</Text>
+          </View>
               <View style= {styles.buttonContainer}>
                 <TouchableOpacity onPress={(ev) => this.linkshs(ev)} style= {styles.button}>
                   <View style= {styles.button1}>

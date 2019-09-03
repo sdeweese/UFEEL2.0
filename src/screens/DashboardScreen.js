@@ -187,7 +187,7 @@ class DashboardScreen extends React.Component {
                 color='#7BA9C7'
                 size = {45}
                 onPress={() => this.props.navigation.navigate('Diary')} />
-              <Text style= {styles.iconText}>Thoughts</Text> 
+              <Text style= {styles.iconText}>Journal</Text> 
               </View>
               <View>
               <Icon
@@ -220,7 +220,7 @@ class DashboardScreen extends React.Component {
               color='#7BA9C7'
               size = {45}
               onPress={() => this.props.navigation.navigate('Help')} />
-            <Text style= {styles.iconText}>Help</Text>
+            <Text style= {styles.iconText}>Resources</Text>
           </View>
           <View>
             <Icon

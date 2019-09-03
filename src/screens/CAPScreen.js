@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking, Image } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking, Image, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 
@@ -8,10 +8,10 @@ class Caps extends React.Component {
     super(props);
 
     this.state = {
-      capSummary: "The Cowell Center Counseling and Psychological Services (CAPS) is applying for accreditation through the International Association of Counseling Services. We are staffed by licensed psychologists, psychology trainees – pre-doctoral trainees and advanced practicum students – and a psychiatrist. All mental health providers are by appointment only and will address your needs in a sensitive, compassionate, confidential and holistic manner. \nOutside of a mental health crisis, there are no walk-in appointments. \nAs well as our on campus staff, CAPS offers assistance with referral to off-campus mental health professionals when you need, or prefer, long-term or specialty care. Please refer to our list of community referrals.",
-      crisisHours: "Monday-Friday: 9:00am-3:00pm at Cowell Center \n",
-      afterBusinessHours: "Contact Resident Director or Campus Safety \n",
-      emergencies: "Contact SCU EMS for after-hours emergencies: Every day of the academic year from 5:00pm to 8:00am (except holidays, academic breaks and finals week). \n"
+      capSummary: "The Cowell Center Counseling and Psychological Services (CAPS) is applying for accreditation through the International Association of Counseling Services. We are staffed by licensed psychologists, psychology trainees – pre-doctoral trainees and advanced practicum students – and a psychiatrist. All mental health providers are by appointment only and will address your needs in a sensitive, compassionate, confidential and holistic manner. Outside of a mental health crisis, there are no walk-in appointments. As well as our on campus staff, CAPS offers assistance with referral to off-campus mental health professionals when you need, or prefer, long-term or specialty care. Please refer to our list of community referrals.",
+      capMission: "The mission of Counseling and Psychological Services (CAPS) is to support students and student learning by providing quality counseling services to students and consultation and outreach programs to the campus community.",
+      crisisHours: "Monday-Friday: 9:00am-3:00pm at Cowell Center",
+      emergencies: "Contact SCU EMS for after-hours emergencies: Every day of the academic year from 5:00pm to 8:00am (except holidays, academic breaks and finals week)."
     };
   }
 
@@ -49,23 +49,26 @@ class Caps extends React.Component {
   render() {
     return (
       <LinearGradient colors={['#ed6b5e', '#ed6b5e', '#ed6b5e']} style={styles.background} location={[0.3, 0.4, 1]}>
-          <View style= {styles.title}>
-            <Text style= {styles.titleText}>About CAPS</Text>
-          </View>
+      <ScrollView>
+          <TouchableOpacity onPress={()=>{Linking.openURL('https://www.scu.edu/cowell/caps/');}}>
+            <View style= {styles.title}>
+              <Text style= {styles.titleText}>About CAPS</Text>
+            </View>
+          </TouchableOpacity>
           <View style= {styles.format}>
+          <View style= {styles.info}>
+            <Text style= {styles.text}>{this.state.capMission}</Text>
+          </View>
+          <View style= {styles.info}>
             <Text style= {styles.text}>{this.state.capSummary}</Text>
-            <View style= {styles.info}>
-                <Text style= {styles.text1}>{this.state.crisisHours}</Text>
-            </View>
-            <View style= {styles.info}>
-              <Text style= {styles.text1}>{this.state.afterBusinessHours}</Text>
-            </View>
-            <View style= {styles.emerg}>
-              <Text style= {styles.emerg}>Emergencies</Text>
-              <View style= {styles.info}>
-                <Text style= {styles.text1}>{this.state.emergencies}</Text>
-              </View>
-            </View>
+          </View>
+          <View style= {styles.info}>
+              <Text style= {styles.text1}>{this.state.crisisHours}</Text>
+          </View>
+          <View style= {styles.info}>
+            <Text style= {styles.text1}>{this.state.emergencies}</Text>
+          </View>
+          </View>
           <View style={{ flexDirection: 'row' }}>
           <View style= {styles.buttonContainer}>
             <TouchableOpacity onPress={(ev) => this.contact(ev)} style= {styles.button}>
@@ -77,12 +80,12 @@ class Caps extends React.Component {
           <View style= {styles.buttonContainer}>
             <TouchableOpacity onPress={(ev) => this.linkems(ev)} style= {styles.button}>
               <View style= {styles.button1}>
-                <Text style= {styles.butText}>More Information on SCU EMS</Text>
+                <Text style= {styles.butText}>More Information on EMS</Text>
               </View>
             </TouchableOpacity>
           </View>
           </View>
-          </View>
+          </ScrollView>
       </LinearGradient>
     )
   }
@@ -141,13 +144,16 @@ const styles = StyleSheet.create ({
   },
   titleText: {
     fontSize: 30,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    borderColor: 'black',
   },
   emerg: {
     fontSize: 25,
     fontWeight: 'bold',
     alignItems: 'center',
     justifyContent: 'center',
+    borderColor: 'black',
+    padding: 2, 
   },
   button: {
     marginTop: 15,
@@ -173,7 +179,7 @@ const styles = StyleSheet.create ({
       height: 50,
       flexDirection: 'row',
       justifyContent:  'center',
-      margin: 5,
+      margin: 2,
   },
   button1: {
     flexDirection: 'row',

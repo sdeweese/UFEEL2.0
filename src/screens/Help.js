@@ -10,13 +10,10 @@ class Help extends React.Component {
     super(props);
 
     this.state = {
-      trial: ''
+      
     };
   }
  
- updateText = () => {
-      this.setState({trial: 'My Changed Text'})
- }
   /*call(ev) {
     ev.preventDefault();
     /*var phoneNumber[0] = '4085544444'
@@ -36,35 +33,42 @@ class Help extends React.Component {
             <Text style= {styles.subHead}>Professional</Text>
           </View>
           <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('4085544444')}>
-              <Text style= {styles.text1}>Campus Safety/EMS</Text>
+            <TouchableOpacity onPress={() => Linking.openURL('tel:4085544444')}>
+              <Text style= {styles.text1}>Campus Safety Emergency or EMS</Text>
               <Text style= {styles.text2}>If you or someone you know is in immediate danger.</Text>
             </TouchableOpacity>
           </View>
           <View style= {styles.cont}>
-            <TouchableOpacity onPress={()=>{Linking.openURL('tel:4085544444');}}>
+            <TouchableOpacity onPress={() => Linking.openURL('http://www.ulifeline.org/')}> 
               <Text style= {styles.text1}>Ulifeline</Text>
-              <Text style= {styles.text2}>To chat with a Crisis Counselor 24/7 about you or someone you are concerned about.</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>{Linking.openURL('tel:8002738255');}}>
+              <Text style= {styles.text2}>To chat with a Crisis Counselor 24/7 about you or someone you are concerned about, call 1-800-273-8255.</Text>
             </TouchableOpacity>
           </View>
           <View style= {styles.cont}>
-            <TouchableOpacity onPress={()=>{Linking.openURL('tel:4085544444');}}>
-              <Text style= {styles.text1}>LGBTQI</Text>
-              <Text style= {styles.text2}>To chat with a community specific Crisis Counselor 24/7 about you or someone you are concerned about.</Text>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.thetrevorproject.org/')}>              
+              <Text style= {styles.text1}>Trevor Project</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>{Linking.openURL('tel:8664887386');}}>
+              <Text style= {styles.text2}>If you’re a member of the LGBTQ+ community thinking about suicide, you deserve immediate help - please call the Trevor Lifeline at 866-488-7386.</Text>
             </TouchableOpacity>
           </View>
           <View style= {styles.cont}>
-          <TouchableOpacity onPress={()=>{Linking.openURL('tel:4085544444');}}>
-              <Text style= {styles.text1}>Counseling and Psychological Services</Text>
-              <Text style= {styles.text2}>To make an appointment for same or next day (M-F, 9a-3p).</Text>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Caps')}>
+              <Text style= {styles.text1}>CAPS: Counseling and Psychological Services</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>{Linking.openURL('tel:40855444501');}}>
+              <Text style= {styles.text2}>To make an appointment for same or next day (M-F, 9am-3pm), call 408-554-44501.</Text>
+            </TouchableOpacity>
+          </View>
+          <View style= {styles.cont}>
+           <TouchableOpacity onPress={() => this.props.navigation.navigate('Shs')}>
+              <Text style= {styles.text1}>SHS: Student Health Services</Text>
+              <Text style= {styles.text2}>CHANGE THIS TEXT.</Text>
             </TouchableOpacity>
           </View>
           </View>
-        </View>
-        <View style= {styles.addCont}>
-          <Text style= {styles.addText}>Safety Plan</Text>
-          <Text onPress={this.updateText} style= {styles.headText}> {this.state.trial} </Text>
-
         </View>
       </LinearGradient>
     );

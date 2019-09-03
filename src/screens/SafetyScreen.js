@@ -53,7 +53,7 @@ class Safety extends React.Component {
           <View style= {styles.cont}>
           <TouchableOpacity onPress={()=>{Linking.openURL('tel:4085544444');}}>
               <Text style= {styles.text1}>Counseling and Psychological Services</Text>
-              <Text style= {styles.text2}>To make an appointment for same or next day (M-F, 9a-3p).</Text>
+              <Text style= {styles.text2}>To make an appointment for same or next day (M-F, 9am-3pm).</Text>
             </TouchableOpacity>
           </View>
           </View>
