@@ -55,13 +55,13 @@ class DiaryScreen extends React.Component {
               right: 30,
             }}>
             <View style={styles.view}><Text style= {styles.promptMes}>Free Write</Text></View>
-            <View style={styles.view}><Text style= {styles.promptMes}>Right now my greatest challenge is ________</Text></View>
-            <View style={styles.view}><Text style= {styles.promptMes}>Positives of today were _______. Negatives about today were ________:</Text></View>
-            <View style={styles.view}><Text style= {styles.promptMes}>When times get tough I want to remember that _______</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>Right now my greatest challenge is...</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>Positives of today were... Negatives about today were...</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>When times get tough I want to remember that...</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>Write a love letter to yourself... </Text></View>
             <View style={styles.view}><Text style= {styles.promptMes}>On a scale of 1-10 my mental health is at a _____ because...</Text></View>
             <View style={styles.view}><Text style= {styles.promptMes}>Who has been your biggest supporter? Write that person a thank you letter...</Text></View>
-            <View style={styles.view}><Text style= {styles.promptMes}>Write a love letter to yourself... </Text></View>
-            <View style={styles.view}><Text style= {styles.promptMes}>A fear I would like to overcome is ________. I can do these things to start overcoming it:</Text></View>
+            <View style={styles.view}><Text style= {styles.promptMes}>A fear I would like to overcome is... I can do these things to start overcoming it...</Text></View>
             <View style={styles.view}><Text style= {styles.promptMes}>Name ten things you can start doing to take care of yourself.</Text></View>
           </ScrollView>
           <View style={styles.input}>
