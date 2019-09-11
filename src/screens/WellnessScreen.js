@@ -20,22 +20,13 @@ class WellnessScreen extends React.Component {
     return (
      <View style= {{flex: 1}}>
       <LinearGradient colors={['#60bb85', '#60bb85', '#60bb85']} style={styles.background} location={[0.3, 0.4, 1]}>
-        <List containerStyle={{borderTopWidth: 0, borderBottomWidth: 0}}>
-          <FlatList
-            data={this.state.data},
-            renderItem{({item}) => (
-              <ListItem
-                title={item.title},
-                description={item.description},
-                containerStyle={{borderBottomWidth: 0}}/>
-              )}
-          />
-            /*ref={(scrollView) => { this.scrollView = scrollView; }}
+       
+         <ScrollView
+           ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
               maxheight: 1000,
             }}
-            scrollToOverflowEnabled={true}*/ 
-        </List>
+            scrollToOverflowEnabled={true}>
         <View style= {styles.header}>
           <View style= {{flex: 1}}>
             <View style= {styles.headContain}>
@@ -135,7 +126,7 @@ class WellnessScreen extends React.Component {
             </View>
         </View>
         </View>
-        
+        </ScrollView>
       </LinearGradient>
       </View>
     );
