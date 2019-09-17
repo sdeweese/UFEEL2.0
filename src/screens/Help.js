@@ -58,7 +58,7 @@ class Help extends React.Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Caps')}>
               <Text style= {styles.text1}>CAPS: Counseling and Psychological Services</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>{Linking.openURL('tel:40855444501');}}>
+            <TouchableOpacity onPress={()=>{Linking.openURL('tel:4085544501');}}>
               <Text style= {styles.text2}>To make an appointment for same or next day (M-F, 9am-3pm), call 408-554-44501.</Text>
             </TouchableOpacity>
           </View>
