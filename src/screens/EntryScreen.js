@@ -13,6 +13,7 @@ class EntryScreen extends React.Component {
     super(props);
 
     console.log("Diary stuff in entry: ", this.props.diary);
+    console.log("Emotions", this.props.Emotions)
 
     this.state = {
       entries: this.props.diary.entries,
@@ -102,7 +103,6 @@ class EntryScreen extends React.Component {
       <View style ={{flex: 1}}>
         <ScrollView>
         <LinearGradient colors={['#71d2a5', '#71d2a5', '#71d2a5']} style={styles.background} location={[0.3, 0.4, 1]}>
-
           <View style= {styles.header}>
             <View>
               {this.renderDiaryEntries()}
@@ -120,7 +120,7 @@ EntryScreen.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-    // console.log(state);
+     console.log(state);
     return {
       graph: state.graph,
       diary: state.diary

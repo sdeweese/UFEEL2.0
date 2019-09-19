@@ -130,7 +130,7 @@ class DashboardScreen extends React.Component {
             ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
               height: 280,
-              maxHeight: 280
+              maxHeight: 300
             }}
             showsHorizontalScrollIndicator={false}
             horizontal= {true}
@@ -160,7 +160,7 @@ class DashboardScreen extends React.Component {
                   marginTop: 5,
                   marginRight: 5,
                   marginBottom: 5,
-                  marginleft: 5,
+                  marginLeft: 5,
                 }}
                 name='plus-square'
                 type='font-awesome'
@@ -170,8 +170,8 @@ class DashboardScreen extends React.Component {
                 borderWidth= {2}
                 borderColor= 'black'
                 flexWrap = 'wrap'
-                onPress={() => this.props.navigation.navigate('Resource')}/>
-              <Text style= {styles.iconText}>Cowell</Text>
+                onPress={() => this.props.navigation.navigate('SafetyPlan')}/>
+              <Text style= {styles.iconText}>Safety</Text>
             </View>
             <View>
               <Icon
@@ -180,7 +180,7 @@ class DashboardScreen extends React.Component {
                   marginTop: 5,
                   marginRight: 5,
                   marginBottom: 5,
-                  marginleft: 5,
+                  marginLeft: 5,
                 }}
                 name='pencil'
                 type='font-awesome'
@@ -195,8 +195,8 @@ class DashboardScreen extends React.Component {
                 containerStyle={{
                   marginTop: 5,
                   marginRight: 5,
-                  marginBottom: 5,
-                  marginleft: 5,
+                  marginBottom: 10,
+                  marginLeft: 5,
                 }}
                 name='flower'
                 type='material-community'
@@ -214,7 +214,7 @@ class DashboardScreen extends React.Component {
                 marginTop: 5,
                 marginRight: 5,
                 marginBottom: 5,
-                marginleft: 5,}}
+                marginLeft: 5,}}
               name='human-greeting'
               type='material-community'
               color='#7BA9C7'
@@ -229,12 +229,12 @@ class DashboardScreen extends React.Component {
                 marginTop: 5,
                 marginRight: 5,
                 marginBottom: 5,
-                marginleft: 5,}}
+                marginLeft: 5,}}
               name='calendar' 
               type='font-awesome'
               color='#7BA9C7'
               size = {45}
-              onPress={() => this.props.navigation.navigate('User')} />
+              onPress={() => this.props.navigation.navigate('Calendar')} />
             <Text style= {styles.iconText}>Calendar</Text>
           </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
@@ -245,7 +245,7 @@ class DashboardScreen extends React.Component {
                 marginTop: 5,
                 marginRight: 5,
                 marginBottom: 5,
-                marginleft: 5,}}
+                marginLeft: 5,}}
               name='cog'
               type='font-awesome'
               color='#7BA9C7'
@@ -261,7 +261,7 @@ class DashboardScreen extends React.Component {
                 marginTop: 5,
                 marginRight: 5,
                 marginBottom: 5,
-                marginleft: 5,}}
+                marginLeft: 5,}}
               name='podcast'
               type='font-awesome'
               color='#7BA9C7'
@@ -277,7 +277,7 @@ class DashboardScreen extends React.Component {
                 marginTop: 5,
                 marginRight: 5,
                 marginBottom: 5,
-                marginleft: 5,}}
+                marginLeft: 5,}}
               name='phone'
               type='font-awesome'
               color='#7BA9C7'

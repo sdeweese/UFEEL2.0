@@ -7,17 +7,19 @@ import Register from './src/screens/RegisterScreen.js';
 import Resource from './src/screens/ResourceScreen.js';
 import Caps from './src/screens/CAPScreen.js';
 import Shs from './src/screens/SHScreen.js';
-import Safety from './src/screens/SafetyScreen.js';
+//import Safety from './src/screens/SafetyScreen.js';
+import SafetyPlan from './src/screens/SafetyPlanScreen.js';
 import Emotion1 from './src/screens/Emotion1Screen.js';
 import Emotion2 from './src/screens/Emotion2Screen.js';
 import Emotion3 from './src/screens/Emotion3Screen.js';
-import User from './src/screens/UserScreen.js';
-import Entry from './src/screens/EntryScreen.js';
+//import User from './src/screens/UserScreen.js';
+//import Entry from './src/screens/EntryScreen.js';
 import Settings from './src/screens/Settings.js';
 import Help from './src/screens/Help.js';
 import Wellness from './src/screens/WellnessScreen.js';
-import Podcast from './src/screens/PodcastScreen.js';
-// import PinWindow from './src/screens/PinScreen.js';
+//import Podcast from './src/screens/PodcastScreen.js';
+import NavBar from './src/screens/NavbarScreen.js';
+//import PinWindow from './src/screens/PinScreen.js';
 import Calendar from './src/screens/CalendarScreen.js';
 
 const transitionConfig = () => {
@@ -85,13 +87,13 @@ const AppNavigator = createStackNavigator({
     Diary: {
       screen: Diary,
       navigationOptions: {
-        title: 'Diary',
+        title: 'Journal',
       }
     },
     Help: {
       screen: Help,
       navigationOptions: {
-        title: 'Help',
+        title: 'SCU Resources',
       }
     },
     Resource: {
@@ -112,12 +114,12 @@ const AppNavigator = createStackNavigator({
         title: 'SHS',
       }
     },
-    Safety: {
+    /*Safety: {
       screen: Safety,
       navigationOptions: {
         title: 'Safety',
       }
-    },
+    },*/
     Emotion1: {
       screen: Emotion1,
       navigationOptions: {
@@ -142,19 +144,19 @@ const AppNavigator = createStackNavigator({
         title: 'Settings'
       }
     },
-    User: {
+    /*User: {
       screen: User,
       navigationOptions: {
         title: 'User'
       }
-    },
+    },*/
     Wellness: {
       screen: Wellness,
       navigationOptions: {
         title: 'Wellness'
       }
     },
-    Podcast: {
+    /*Podcast: {
       screen: Podcast,
       navigationOptions: {
         title: 'Podcast & Videos'
@@ -163,26 +165,42 @@ const AppNavigator = createStackNavigator({
     Entry: {
       screen: Entry,
       navigationOptions: {
-        title: 'Diary Entries'
+        title: 'Journal Entries'
       }
-    },
+    },*/
     Calendar: {
       screen: Calendar,
       navigationOptions: {
-        title: 'Monthly Emotion Tracker'
+        title: 'Emotion Tracker'
       }
     },
-    // Pins: {
-    //   screen: Pin,
-    //   navigationOptions: {
-    //     title: 'Monthly Emotion Tracker'
-    //   }
-    // }
+    NavBar: {
+      screen: NavBar,
+      navigationOptions: {
+        title: 'Navigation Bar'
+      }
+    },
+    SafetyPlan: {
+      screen: SafetyPlan,
+      navigationOptions: {
+        title: 'Safety Plan'
+      }
+    },
   },
   {
     initialRouteName: "Emotion1",
     transitionConfig
 });
+    /*},
+    } 
+     Pins: {
+       screen: Pin,
+       navigationOptions: {
+        title: 'Pin'
+      }
+    }
+  },*/
+
 
 let Navigation = createAppContainer(AppNavigator)
 

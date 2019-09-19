@@ -5,24 +5,31 @@ import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import PropTypes from 'prop-types';
 
-getData = async () => {
+getEmotes = async () => {
   let existingData = await AsyncStorage.getItem('emotes');
   return existingData;
 }
 
+getJournal = async () => {
+  let existingJournal = await AsyncStorage.getItem('diary');
+  return existingJournal;
+}
+
 class CalendarScreen extends React.Component {
   constructor(props) {
-
     super(props);
 
     this.state = {
       emotes: this.props.emotion.emotes,
+      entries: this.props.diary.entries,
       currentMonth: ""
     };
   }
 
   componentDidMount() {
     console.log("Emotions in calendar screen: ", this.state.emotes);
+    console.log("Diary: ", this.props.diary);
+    console.log("STORY TIME: ", this.state.time); //Showing the right time, we  just need a way to get this in a var
     var month = new Date().getMonth() + 1;
     var strmonth = month.toString();
 
@@ -38,8 +45,10 @@ class CalendarScreen extends React.Component {
         return (
           <View style= {styles.cont}>
             <TouchableOpacity>
-              <Text style= {styles.text1}>Day: {counter}</Text>
+              <Text style= {styles.text1}>Date</Text>
               <Text style= {styles.text2}>{emo.emotion1}</Text>
+              <Text style= {styles.text2}>{emo.emotion2}</Text>
+              <Text style= {styles.text2}>{emo.emotion3}</Text>
             </TouchableOpacity>
           </View>
         )
@@ -48,56 +57,16 @@ class CalendarScreen extends React.Component {
     });
   }
 
-  renderCurrentMonth() {
-      if (this.state.currentMonth === "1") {
+  renderJournalEntries() {
+    return this.state.entries.map((e) => {
         return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of January</Text>
-        )
-      } else if (this.state.currentMonth === "2") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of February</Text>
-        )
-      } else if (this.state.currentMonth === "3") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of March</Text>
-        )
-      } else if (this.state.currentMonth === "4") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of April</Text>
-        )
-      } else if (this.state.currentMonth === "5") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of May</Text>
-        )
-      } else if (this.state.currentMonth === "6") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of June</Text>
-        )
-      } else if (this.state.currentMonth === "7") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of July</Text>
-        )
-      } else if (this.state.currentMonth === "8") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of August</Text>
-        )
-      } else if (this.state.currentMonth === "9") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of September</Text>
-        )
-      } else if (this.state.currentMonth === "10") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of October</Text>
-        )
-      } else if (this.state.currentMonth === "11") {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of November</Text>
-        )
-      } else {
-        return (
-          <Text style= {styles.headText}>Emotion Tracker for the month of December</Text>
+          <View style= {styles.cont}>
+              <Text style= {styles.text1}>Time: {e.time}</Text>
+              <Text style= {styles.text1}>{e.entry}</Text>
+          </View>
         )
       }
+    );
   }
 
   render() {
@@ -105,13 +74,12 @@ class CalendarScreen extends React.Component {
       <View style ={{flex: 1}}>
       <ScrollView>
       <LinearGradient colors={['#71d2a5', '#71d2a5', '#71d2a5']} style={styles.background} location={[0.3, 0.4, 1]}>
-
-        <View style= {styles.header}>
-          {this.renderCurrentMonth()}
           <View>
             {this.renderEmotions()}
           </View>
-        </View>
+          <View>
+            {this.renderJournalEntries()}
+          </View>
       </LinearGradient>
       </ScrollView>
       </View>
@@ -172,18 +140,27 @@ const styles = StyleSheet.create ({
 
 });
 
+
 CalendarScreen.propTypes = {
+  getEmotes: PropTypes.func,
+  getTime: PropTypes.func,
+  getDiary: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
-    // console.log(state);
+     console.log(state);
     return {
-      emotion: state.emotions
+      emotion: state.emotions,
+      time: state.time,
+      diary: state.diary
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
+      getEmotes: () => dispatch({type: 'SEND_EMOTES'}),
+      getTime: () => dispatch({type: 'SEND_TIME'}),
+      getDiary: () => dispatch({type: 'SEND_DIARY'}),
     };
 };
 

@@ -25,7 +25,7 @@ class DiaryScreen extends React.Component {
     }
 
     // this.props.getDiary();
-    this.props.navigation.navigate('Dashboard');
+    this.props.navigation.navigate('Dashboard'); // TODO: this should go to the page displaying the emotions & journal entry
   }
 
   render() {

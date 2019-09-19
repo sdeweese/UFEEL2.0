@@ -29,9 +29,6 @@ class Help extends React.Component {
         <View style= {styles.header}>
           <Text style= {styles.headText}>Emergency Contacts</Text>
         <View>
-          <View style= {styles.headContain}>
-            <Text style= {styles.subHead}>Professional</Text>
-          </View>
           <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('tel:4085544444')}>
               <Text style= {styles.text1}>Campus Safety Emergency or EMS</Text>
@@ -109,9 +106,9 @@ const styles = StyleSheet.create ({
     borderWidth: 2,
     borderColor: 'black',
     backgroundColor: '#71d2a5',
-    padding: 20,
-    marginTop: 15,
-    marginBottom: 15,
+    padding: 10,
+    marginTop: 7,
+    marginBottom: 7,
     marginLeft: 10,
     marginRight: 10,
   },

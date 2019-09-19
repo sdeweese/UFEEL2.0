@@ -36,7 +36,7 @@ class Emotion1Screen extends React.Component {
     return (
       <View style={styles.format}>
         <View style={styles.header}>
-          <Text style={styles.headText}>How are you feeling today..?</Text>
+          <Text style={styles.headText}>How are you feeling today?</Text>
         </View>
         {this.state.emotions.map((emo) => {
           return (

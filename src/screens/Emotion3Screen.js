@@ -57,7 +57,8 @@ class Emotion3Screen extends React.Component {
     console.log("strmonth in emotion3: ", strmonth);
 
     this.props.saveEmotions(date, strmonth);
-
+    console.log(this.props.Emotions)
+   
     var check = true;
 
     AsyncStorage.setItem('daily_check', JSON.stringify(check))
