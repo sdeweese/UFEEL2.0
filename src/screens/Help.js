@@ -36,22 +36,6 @@ class Help extends React.Component {
             </TouchableOpacity>
           </View>
           <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('http://www.ulifeline.org/')}> 
-              <Text style= {styles.text1}>Ulifeline</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={()=>{Linking.openURL('tel:8002738255');}}>
-              <Text style= {styles.text2}>To chat with a Crisis Counselor 24/7 about you or someone you are concerned about, call 1-800-273-8255.</Text>
-            </TouchableOpacity>
-          </View>
-          <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('https://www.thetrevorproject.org/')}>              
-              <Text style= {styles.text1}>Trevor Project</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={()=>{Linking.openURL('tel:8664887386');}}>
-              <Text style= {styles.text2}>If you’re a member of the LGBTQ+ community thinking about suicide, you deserve immediate help - please call the Trevor Lifeline at 866-488-7386.</Text>
-            </TouchableOpacity>
-          </View>
-          <View style= {styles.cont}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Caps')}>
               <Text style= {styles.text1}>CAPS: Counseling and Psychological Services</Text>
             </TouchableOpacity>
@@ -107,8 +91,8 @@ const styles = StyleSheet.create ({
     borderColor: 'black',
     backgroundColor: '#71d2a5',
     padding: 10,
-    marginTop: 7,
-    marginBottom: 7,
+    marginTop: 15,
+    marginBottom: 15,
     marginLeft: 10,
     marginRight: 10,
   },
