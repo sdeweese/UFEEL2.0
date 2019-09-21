@@ -170,7 +170,7 @@ class DashboardScreen extends React.Component {
                 borderWidth= {2}
                 borderColor= 'black'
                 flexWrap = 'wrap'
-                onPress={() => this.props.navigation.navigate('SafetyPlan')}/>
+                onPress={() => this.props.navigation.navigate('NavBar')}/> //change back to SafetyPlan
               <Text style= {styles.iconText}>Safety</Text>
             </View>
             <View>
@@ -254,37 +254,6 @@ class DashboardScreen extends React.Component {
             <Text style= {styles.iconText}>Settings</Text>
             </View>
             </View>
-         {/*<View>
-            <Icon
-              raised
-              containerStyle={{
-                marginTop: 5,
-                marginRight: 5,
-                marginBottom: 5,
-                marginLeft: 5,}}
-              name='podcast'
-              type='font-awesome'
-              color='#7BA9C7'
-              size = {45}
-              onPress={() => this.props.navigation.navigate('Podcast')} />
-            <Text style= {styles.iconText}>Media</Text>
-          </View>*/}
-        
-			     {/*<View>
-            <Icon
-              raised
-              containerStyle={{
-                marginTop: 5,
-                marginRight: 5,
-                marginBottom: 5,
-                marginLeft: 5,}}
-              name='phone'
-              type='font-awesome'
-              color='#7BA9C7'
-              size = {45}
-              onPress={() => this.props.navigation.navigate('Safety')} /> 
-            <Text style= {styles.iconText}>Contacts</Text> 
-            </View> */}
           </View>
         </View>
       </LinearGradient>

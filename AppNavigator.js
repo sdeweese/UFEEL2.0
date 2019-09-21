@@ -188,7 +188,7 @@ const AppNavigator = createStackNavigator({
     },
   },
   {
-    initialRouteName: "Emotion1",
+    initialRouteName: "NavBar", //change back to Emotion1
     transitionConfig
 });
     /*},
