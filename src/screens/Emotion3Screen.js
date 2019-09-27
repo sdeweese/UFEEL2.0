@@ -69,7 +69,7 @@ class Emotion3Screen extends React.Component {
       console.log("There was an error saving the product");
     });
 
-    this.props.navigation.navigate('Dashboard');
+    this.props.navigation.navigate('NavBar'); //was Dashboard
   }
 
   renderElement() {

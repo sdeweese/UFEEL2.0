@@ -62,7 +62,7 @@ class CalendarScreen extends React.Component {
         return (
           <View style= {styles.cont}>
               <Text style= {styles.text1}>Time: {e.time}</Text>
-              <Text style= {styles.text1}>{e.entry}</Text>
+              <Text style= {styles.text1}>{e.entries}</Text>
           </View>
         )
       }
