@@ -39,7 +39,7 @@ class Emotion2Screen extends React.Component {
                 this.handleClick(ev, emot);
               }}
               title={emo}
-              color="#ffffff"
+              color="#000"
               accessibilityLabel="Learn more about this purple button"
               />
         </View>
@@ -55,7 +55,7 @@ class Emotion2Screen extends React.Component {
                 this.handleClick(ev, emot);
               }}
               title={emo}
-              color="#ffffff"
+              color="#000"
               accessibilityLabel="Learn more about this purple button"
               />
         </View>
@@ -71,7 +71,7 @@ class Emotion2Screen extends React.Component {
                 this.handleClick(ev, emot);
               }}
               title={emo}
-              color="#ffffff"
+              color="#000"
               accessibilityLabel="Learn more about this purple button"
               />
         </View>
@@ -87,7 +87,7 @@ class Emotion2Screen extends React.Component {
                 this.handleClick(ev, emot);
               }}
               title={emo}
-              color="#ffffff"
+              color="#000"
               accessibilityLabel="Learn more about this purple button"
               />
         </View>
@@ -103,7 +103,7 @@ class Emotion2Screen extends React.Component {
                 this.handleClick(ev, emot);
               }}
               title={emo}
-              color="#ffffff"
+              color="#000"
               accessibilityLabel="Learn more about this purple button"
               />
         </View>
@@ -119,7 +119,7 @@ class Emotion2Screen extends React.Component {
                 this.handleClick(ev, emot);
               }}
               title={emo}
-              color="#ffffff"
+              color="#000"
               accessibilityLabel="Learn more about this purple button"
               />
         </View>
@@ -159,12 +159,12 @@ const styles = StyleSheet.create ({
         flex: 1,
         justifyContent: 'space-between',
         justifyContent: 'center',
-        backgroundColor: '#f5c278'
+        backgroundColor: '#ffffff'
   },
   emoButton: {
     justifyContent: 'space-between',
     justifyContent: 'center',
-    backgroundColor: '#ee7b86',
+    backgroundColor: '#ffffff',
     borderRadius: 40,
     borderWidth: 2,
     padding: 20,
@@ -179,7 +179,7 @@ const styles = StyleSheet.create ({
   },
   border: {
     height: verticalScale(700),
-    backgroundColor: '#f5c278'
+    backgroundColor: '#ffffff'
   }
 
 });
