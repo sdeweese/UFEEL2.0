@@ -29,7 +29,6 @@ class CalendarScreen extends React.Component {
   componentDidMount() {
     console.log("Emotions in calendar screen: ", this.state.emotes);
     console.log("Diary: ", this.props.diary);
-    console.log("STORY TIME: ", this.state.time); //Showing the right time, we  just need a way to get this in a var
     var month = new Date().getMonth() + 1;
     var strmonth = month.toString();
 
@@ -62,7 +61,7 @@ class CalendarScreen extends React.Component {
         return (
           <View style= {styles.cont}>
               <Text style= {styles.text1}>Time: {e.time}</Text>
-              <Text style= {styles.text1}>{e.entries}</Text>
+              <Text style= {styles.text1}>{e.entry}</Text>
           </View>
         )
       }

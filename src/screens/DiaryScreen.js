@@ -23,14 +23,12 @@ class DiaryScreen extends React.Component {
     if(this.state.text.localeCompare("") != 0) { // 0 = an exact match
       this.props.saveDiary(this.state.text);
     }
-
-    // this.props.getDiary();
     this.props.navigation.navigate('Calendar'); // TODO: this should go to the page displaying the emotions & journal entry (Calendar)
   }
 
   render() {
       return (
-        <LinearGradient colors={['#436ce8', '#5c61f2', '#436ce8']} style={styles.background} location={[0.3, 0.4, 1]}>
+        <LinearGradient colors={['#ffffff', '#ffffff']} style={styles.background} location={[0.3, 0.4, 1]}>
           <View style= {styles.mes}>
             <Text style= {styles.mesText}>How are you feeling today?</Text>
           </View>
@@ -91,7 +89,7 @@ class DiaryScreen extends React.Component {
               // }}
               name='check-circle'
               type='font-awesome'
-              color='#436ce8'
+              color='black'
               size = {40}
               borderStyle= 'solid'
               borderWidth= {2}
@@ -130,7 +128,7 @@ class DiaryScreen extends React.Component {
       height: verticalScale(300),
       width: scale(300),
       bottom: 150,
-      borderColor: '#692ffc',
+      borderColor: 'black',
       borderWidth: 2,
       backgroundColor: 'white',
       justifyContent: 'flex-start',
@@ -142,27 +140,12 @@ class DiaryScreen extends React.Component {
       borderColor: 'black',
       borderStyle: 'solid',
       marginTop: 50,
-      backgroundColor: 'rgba(230,230,250,0.8)',
+      backgroundColor: 'white',
       width: width - 80,
       margin: 10,
       marginTop: 4,
       height: 150,
       borderRadius: 10,
-      //paddingHorizontal : 30
-      borderColor: 'black',
-      borderWidth: 2,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    view2: {
-      marginTop: 50,
-      backgroundColor: 'rgba(221,160,221, 0.8)',
-      width: width - 80,
-      margin: 10,
-      marginTop: 4,
-      height: 150,
-      borderRadius: 10,
-      //paddingHorizontal : 30
       borderColor: 'black',
       borderWidth: 2,
       justifyContent: 'center',
@@ -200,7 +183,7 @@ DiaryScreen.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-    // console.log(state);
+    console.log(state);
     return {
       diary: state.diary
     };
