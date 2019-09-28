@@ -33,7 +33,7 @@ class SettingScreen extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['#6f6e6e', '#6f6e6e', '#6f6e6e']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
       <View style= {styles.top}>
         <View style= {styles.cont}><Text style= {styles.text1}>Change Password</Text></View>
         <TouchableOpacity onPress={(ev) => this.changeCode(ev)}>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create ({
     borderRadius: 15,
     borderWidth: 2,
     borderColor: 'black',
-    backgroundColor: '#e4e7ea',
+    backgroundColor: '#ffffff',
     padding: 20,
     marginTop: 15,
     marginBottom: 15,

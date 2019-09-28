@@ -16,7 +16,7 @@ class SafetyPlan extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['#71d2a5', '#71d2a5', '#71d2a5']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
         <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('http://www.ulifeline.org/')}> 
               <Text style= {styles.text1}>Ulifeline</Text>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create ({
     borderRadius: 15,
     borderWidth: 2,
     borderColor: 'black',
-    backgroundColor: '#d5a6d1',
+    backgroundColor: '#ffffff',
     padding: 20,
     marginTop: 15,
     marginBottom: 15,
@@ -95,7 +95,7 @@ const styles = StyleSheet.create ({
     borderWidth: 2,
     width: 120,
     marginTop: 20,
-    backgroundColor: '#83d2f0',
+    backgroundColor: '#ffffff',
   },
   addText: {
     justifyContent:  'center',

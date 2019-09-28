@@ -25,7 +25,7 @@ class Help extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['#d5a6d1', '#d5a6d1', '#d5a6d1']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
         <View style= {styles.header}>
           <Text style= {styles.headText}>Emergency Contacts</Text>
         <View>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create ({
     borderRadius: 15,
     borderWidth: 2,
     borderColor: 'black',
-    backgroundColor: '#71d2a5',
+    backgroundColor: '#ffffff',
     padding: 10,
     marginTop: 15,
     marginBottom: 15,
@@ -113,7 +113,7 @@ const styles = StyleSheet.create ({
     borderWidth: 2,
     width: 80,
     marginTop: 20,
-    backgroundColor: '#83d2f0',
+    backgroundColor: '#ffffff',
   },
   addText: {
     justifyContent:  'center',

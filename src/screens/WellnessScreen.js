@@ -19,7 +19,7 @@ class WellnessScreen extends React.Component {
   render() {
     return (
      <View style= {{flex: 1}}>
-      <LinearGradient colors={['#60bb85', '#60bb85', '#60bb85']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
        
          <ScrollView
            ref={(scrollView) => { this.scrollView = scrollView; }}
@@ -165,7 +165,7 @@ const styles = StyleSheet.create ({
     borderRadius: 15,
     borderWidth: 2,
     borderColor: 'black',
-    backgroundColor: '#d7a3ce',
+    backgroundColor: '#ffffff',
     padding: 20,
     marginTop: 15,
     marginBottom: 15,

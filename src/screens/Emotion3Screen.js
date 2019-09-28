@@ -69,7 +69,7 @@ class Emotion3Screen extends React.Component {
       console.log("There was an error saving the product");
     });
 
-    this.props.navigation.navigate('NavBar'); //was Dashboard
+    this.props.navigation.navigate('NavBar'); //should change to Diary
   }
 
   renderElement() {
@@ -630,7 +630,7 @@ Emotion3Screen.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-    // console.log(state);
+    console.log(state);
     return {
       emotion: state.emotions,
       userInfo: state.user

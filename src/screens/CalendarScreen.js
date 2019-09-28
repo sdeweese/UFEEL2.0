@@ -72,7 +72,7 @@ class CalendarScreen extends React.Component {
     return (
       <View style ={{flex: 1}}>
       <ScrollView>
-      <LinearGradient colors={['#71d2a5', '#71d2a5', '#71d2a5']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
           <View>
             {this.renderEmotions()}
           </View>
@@ -118,7 +118,7 @@ const styles = StyleSheet.create ({
     borderRadius: 15,
     borderWidth: 2,
     borderColor: 'black',
-    backgroundColor: '#d5a6d1',
+    backgroundColor: '#ffffff',
     padding: 20,
     marginTop: 15,
     marginBottom: 15,
@@ -159,7 +159,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
       getEmotes: () => dispatch({type: 'SEND_EMOTES'}),
       getTime: () => dispatch({type: 'SEND_TIME'}),
-      getDiary: () => dispatch({type: 'SEND_DIARY'}),
+      //getDiary: () => dispatch({type: 'SEND_DIARY'}),
     };
 };
 

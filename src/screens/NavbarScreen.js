@@ -77,7 +77,6 @@ const styles = StyleSheet.create ({
     borderWidth: 2,
     borderColor: 'black',
     backgroundColor: '#d7a3ce',
-    
     marginBottom: 15,
     marginLeft: 15,
     marginRight: 15,
@@ -99,9 +98,11 @@ const styles = StyleSheet.create ({
     width: 30,
     marginRight: 10,
     marginLeft: 10,
+    padding: 0,
+
   },
   nav: {
-    flex: 3, 
+    flex: 1, 
     flexDirection: 'row',
   }
 });

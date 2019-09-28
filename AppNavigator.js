@@ -171,7 +171,7 @@ const AppNavigator = createStackNavigator({
     Calendar: {
       screen: Calendar,
       navigationOptions: {
-        title: 'Emotion Tracker'
+        title: 'Calendar'
       }
     },
     NavBar: {
