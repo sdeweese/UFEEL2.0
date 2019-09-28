@@ -15,30 +15,6 @@ class Shs extends React.Component {
     };
   }
 
-  /*contact(ev) {
-    ev.preventDefault();
-
-    Alert.alert(
-      'Contact SCU EMS',
-      [
-        {
-          text: 'Emergency Call',
-          onPress: () => console.log('Emergency Call')
-        },
-        {
-          text: 'Non-Emergency Call',
-          onPress: () => console.log('Non-Emergency Call'),
-        },
-        {
-          text: 'Cancel',
-          onPress: () => console.log('Cancel'),
-          style: 'cancel',
-        },
-      ],
-      {cancelable: false},
-    );
-  }*/
-
   linkshs(ev) {
     ev.preventDefault();
 
@@ -47,7 +23,7 @@ class Shs extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['#ed6b5e', '#ed6b5e', '#ed6b5e']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
         <View style= {styles.title}>
           <Text style={styles.titleText}>Student Health Services</Text>
         </View>
@@ -91,10 +67,7 @@ const styles = StyleSheet.create ({
     paddingBottom: 12,
   },
   text: {
-    borderRadius: 15,
-    borderWidth: 2,
-    borderColor: 'black',
-    backgroundColor: '#addbcc',
+    backgroundColor: '#ffffff',
     padding: 10,
     marginBottom: 5,
     marginLeft: 5,
@@ -104,8 +77,8 @@ const styles = StyleSheet.create ({
   },
   info: {
     borderRadius: 10,
-    backgroundColor: '#addbcc',
-    borderColor: '#ed6b5e',
+    backgroundColor: '#ffffff',
+    borderColor: '#000',
     borderWidth: 2,
     justifyContent: 'center',
     alignContent: 'center',
@@ -149,7 +122,7 @@ const styles = StyleSheet.create ({
     borderWidth: 2,
     height: 50,
     borderRadius: 15,
-    backgroundColor: '#75b4e7',
+    backgroundColor: '#000',
     flexDirection: 'column',
     padding: 5,
     margin: 5,
