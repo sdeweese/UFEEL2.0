@@ -13,7 +13,7 @@ class NavBar extends React.Component {
     this.state = {
        
     }
-};
+  };
 
   render() {
     return (
@@ -37,6 +37,11 @@ class NavBar extends React.Component {
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>          
           <Image source={require("./app-icons/hamburger.png")} style={styles.img} />
         </TouchableOpacity>
+
+         <TouchableOpacity onPress={() => this.props.navigation.navigate('Scroll')}>          
+          <Text>REMOVE ME</Text>
+        </TouchableOpacity>
+
         </View>
       </LinearGradient>
       );
