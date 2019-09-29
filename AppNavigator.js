@@ -21,8 +21,6 @@ import Wellness from './src/screens/WellnessScreen.js';
 import NavBar from './src/screens/NavbarScreen.js';
 //import PinWindow from './src/screens/PinScreen.js';
 import Calendar from './src/screens/CalendarScreen.js';
-import Scroll from './src/screens/scroll.js';
-
 
 const transitionConfig = () => {
       return {
@@ -186,12 +184,6 @@ const AppNavigator = createStackNavigator({
       screen: SafetyPlan,
       navigationOptions: {
         title: 'Safety Plan'
-      }
-    },
-    Scroll: {
-      screen: scroll,
-      navigationOptions: {
-        title: 'Scroll'
       }
     },
   },
