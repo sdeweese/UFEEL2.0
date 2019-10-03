@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Dimensions, AsyncStorage } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Dimensions, AsyncStorage, Image } from 'react-native';
 import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import axios from 'axios';
@@ -103,6 +103,7 @@ class LoginScreen extends React.Component {
   render() {
     return (
       <LinearGradient colors={['#3B5998', '#8B9DC3', '#DFE3EE']} style={styles.background} location={[0.3, 0.4, 1]}>
+        <Image source={require("./app-icons/pogo.png")} style={styles.img} />
         <View style = {styles.titleCont}>
           <Text style = {styles.titleText}>UFEEL</Text>
         </View>
@@ -176,18 +177,23 @@ const styles = StyleSheet.create ({
   },
   titleCont: {
     width: width,
-    padding: 10,
-    margin: 10,
-  },
-  titleText: {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    fontSize: 100,
-    paddingLeft: 50,
+    paddingBottom: 50, 
+  },
+  titleText: {
+    fontSize: 50,
     fontWeight: 'bold',
-    fontStyle: 'italic',
     color: '#fd9542',
+  },
+  img: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 150,
+    width: 150,
+    margin: 0,
+    padding: 0,
   }
 });
 
