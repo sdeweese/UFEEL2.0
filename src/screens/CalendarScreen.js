@@ -159,7 +159,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
       getEmotes: () => dispatch({type: 'SEND_EMOTES'}),
       getTime: () => dispatch({type: 'SEND_TIME'}),
-      //getDiary: () => dispatch({type: 'SEND_DIARY'}),
+      getDiary: () => dispatch({type: 'SEND_DIARY'}),
     };
 };
 
