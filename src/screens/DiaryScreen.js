@@ -125,7 +125,7 @@ class DiaryScreen extends React.Component {
       paddingHorizontal: 15,
     },
     input: {
-      height: verticalScale(300),
+      height: verticalScale(200),
       width: scale(300),
       bottom: 150,
       borderColor: 'black',

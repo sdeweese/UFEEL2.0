@@ -43,8 +43,8 @@ class CalendarScreen extends React.Component {
       if (emo.month === this.state.currentMonth) {
         return (
           <View style= {styles.cont}>
-            <TouchableOpacity>
-              <Text style= {styles.text1}>Date</Text>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('NavBar')}>
+              <Text style= {styles.text1}>Emotions</Text>
               <Text style= {styles.text2}>{emo.emotion1}</Text>
               <Text style= {styles.text2}>{emo.emotion2}</Text>
               <Text style= {styles.text2}>{emo.emotion3}</Text>
