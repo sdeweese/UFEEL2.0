@@ -32,7 +32,7 @@ class Help extends React.Component {
           <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('tel:4085544444')}>
               <Text style= {styles.text1}>Campus Safety Emergency or EMS</Text>
-              <Text style= {styles.text2}>If you or someone you know is in immediate danger.</Text>
+              <Text style= {styles.text2}>Call (408)554-4444 if you or someone you know is in immediate danger.</Text>
             </TouchableOpacity>
           </View>
           <View style= {styles.cont}>
@@ -40,13 +40,13 @@ class Help extends React.Component {
               <Text style= {styles.text1}>CAPS: Counseling and Psychological Services</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={()=>{Linking.openURL('tel:4085544501');}}>
-              <Text style= {styles.text2}>To make an appointment for same or next day (M-F, 9am-3pm), call 408-554-4501.</Text>
+              <Text style= {styles.text2}>To make an appointment for same or next day (M-F 9:00am-3:00pm), call 408-554-4501.</Text>
             </TouchableOpacity>
           </View>
           <View style= {styles.cont}>
            <TouchableOpacity onPress={() => this.props.navigation.navigate('Shs')}>
               <Text style= {styles.text1}>SHS: Student Health Services</Text>
-              <Text style= {styles.text2}>CHANGE THIS TEXT.</Text>
+              <Text style= {styles.text2}>The SHS is open M-F 8:30am-5:00pm. It is located between the Malley Fitness and Recreation Center and the tennis courts on the east side of campus.</Text>
             </TouchableOpacity>
           </View>
           </View>

@@ -23,7 +23,7 @@ class DiaryScreen extends React.Component {
     if(this.state.text.localeCompare("") != 0) { // 0 = an exact match
       this.props.saveDiary(this.state.text);
     }
-    this.props.navigation.navigate('Calendar'); // TODO: this should go to the page displaying the emotions & journal entry (Calendar)
+    this.props.navigation.navigate('NavBar'); // TODO: this should go to the Calendar screen
   }
 
   render() {
