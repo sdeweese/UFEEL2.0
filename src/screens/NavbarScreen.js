@@ -44,44 +44,6 @@ class NavBar extends React.Component {
  
 
 const styles = StyleSheet.create ({
-  headText: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    justifyContent: 'center',
-  },
-  header: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  subHead: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    justifyContent: 'center',
-    paddingTop: 10,
-    paddingBottom: 10,
-    alignItems: 'center',
-  },
-  cont: {
-    borderRadius: 15,
-    borderWidth: 2,
-    borderColor: 'black',
-    backgroundColor: '#d7a3ce',
-    marginBottom: 15,
-    marginLeft: 15,
-    marginRight: 15,
-    marginTop: height - 50,
-  },
-  text1: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  text2: {
-    fontSize: 12,
-  },
-  headContain: {
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
   img: {
     height: 30,
     width: 30,
@@ -93,7 +55,9 @@ const styles = StyleSheet.create ({
   nav: {
     flex: 1, 
     flexDirection: 'row',
-    bottom: 0,
+	alignItems: 'flex-end',
+	justifyContent: 'center',
+	paddingBottom: '2%',
   }
 });
 
