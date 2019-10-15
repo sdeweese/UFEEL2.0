@@ -154,7 +154,7 @@ const styles = StyleSheet.create ({
     left: 0,
     right: 0,
     top: 0,
-    height: height, /*verticalScale(700),*/
+    height: height, 
     alignItems: 'center',
   },
   cont: {
