@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking, Image, ScrollView, Dimensions } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
+
+const { height } = Dimensions.get('window');
 
 class Caps extends React.Component {
   constructor(props) {
@@ -51,7 +53,7 @@ class Caps extends React.Component {
       <ScrollView
            ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
-              maxheight: 1000,
+              maxheight: height,
             }}
             scrollToOverflowEnabled={true}>
           <TouchableOpacity onPress={()=>{Linking.openURL('https://www.scu.edu/cowell/caps/');}}>
@@ -73,6 +75,7 @@ class Caps extends React.Component {
             <Text style= {styles.text1}>{this.state.emergencies}</Text>
           </View>
           </View>
+
           <View style={{ flexDirection: 'row' }}>
           <View style= {styles.buttonContainer}>
             <TouchableOpacity onPress={(ev) => this.contact(ev)} style= {styles.button}>
@@ -101,7 +104,7 @@ const styles = StyleSheet.create ({
     left: 0,
     right: 0,
     top: 0,
-    height: verticalScale(650),
+    height: height,
   },
 
   link: {

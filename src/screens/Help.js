@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, Platform } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, Platform, ScrollView } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import Communications from 'react-native-communications';
 
@@ -25,6 +25,12 @@ class Help extends React.Component {
   render() {
     return (
       <View style={styles.background}>
+      <ScrollView
+      ref={(scrollView) => { this.scrollView = scrollView; }}
+            contentContainerStyle={{
+              maxheight: 1000,
+            }}
+            scrollToOverflowEnabled={true}>
         <View style= {styles.header}>
           <Text style= {styles.headText}>Emergency Contacts</Text>
         <View>
@@ -48,8 +54,27 @@ class Help extends React.Component {
               <Text style= {styles.text2}>The SHS is open M-F 8:30am-5:00pm. It is located between the Malley Fitness and Recreation Center and the tennis courts on the east side of campus.</Text>
             </TouchableOpacity>
           </View>
+
+          <View style= {styles.cont}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.scu.edu/title-ix/')}>
+              <Text style= {styles.text1}>Title IX</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('tel:4085513043')}>
+              <Text style= {styles.text2}>Call (408)551-3043 if you or someone you know is a victim of sexual misconduct.</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style= {styles.cont}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.crisistextline.org/')}>
+              <Text style= {styles.text1}>Text Crisis Line</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('tel:741741')}>
+              <Text style= {styles.text2}>If calling seems too intense, try texting 'HOME' to 741741.</Text>
+            </TouchableOpacity>
+          </View>
           </View>
         </View>
+        </ScrollView>
       </View>
     );
   }
@@ -90,8 +115,8 @@ const styles = StyleSheet.create ({
     borderColor: 'black',
     backgroundColor: '#ffffff',
     padding: 10,
-    marginTop: 15,
-    marginBottom: 15,
+    marginTop: 5,
+    marginBottom: 5,
     marginLeft: 10,
     marginRight: 10,
   },

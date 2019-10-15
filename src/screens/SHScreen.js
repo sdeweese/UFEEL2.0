@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking, ScrollView } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking, ScrollView, Dimensions } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
+
+
 
 class Shs extends React.Component {
   constructor(props) {
@@ -22,7 +24,7 @@ class Shs extends React.Component {
 
   render() {
     return (
-      <View style= {{flex:2}}>
+      <View style= {{flex:1}}>
       <ScrollView
            ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
@@ -147,7 +149,7 @@ const styles = StyleSheet.create ({
       flexDirection: 'row',
       justifyContent:  'space-around',
       margin: 5,
-      padding: 5,
+      padding: 20,
   },
   button1: {
     flexDirection: 'row',
