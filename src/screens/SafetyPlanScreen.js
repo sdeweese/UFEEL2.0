@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, Platform } from 'react-native';
-import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import Communications from 'react-native-communications';
 
@@ -16,7 +15,7 @@ class SafetyPlan extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <View style={styles.background}>
         <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('http://www.ulifeline.org/')}> 
               <Text style= {styles.text1}>Ulifeline</Text>
@@ -38,7 +37,7 @@ class SafetyPlan extends React.Component {
               <Text style= {styles.text1}>Safety Plan</Text>
             </TouchableOpacity>
         </View>
-      </LinearGradient>
+      </View>
     );
   }
 

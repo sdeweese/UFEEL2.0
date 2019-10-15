@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, Text, TextInput, View, Dimensions, TouchableOpacity, ScrollView, Platform } from 'react-native';
-import { LinearGradient } from 'expo';
 import { Icon } from 'react-native-elements'
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import PropTypes from 'prop-types';
@@ -28,7 +27,7 @@ class DiaryScreen extends React.Component {
 
   render() {
       return (
-        <LinearGradient colors={['#ffffff', '#ffffff']} style={styles.background} location={[0.3, 0.4, 1]}>
+        <View style={styles.background}>
           <View style= {styles.mes}>
             <Text style= {styles.mesText}>How are you feeling today?</Text>
           </View>
@@ -98,9 +97,7 @@ class DiaryScreen extends React.Component {
               onPress={(ev) => this.handleSave(ev)}/>
           </TouchableOpacity>
           </View>
-
-
-        </LinearGradient>
+        </View>
       )
     }
   }

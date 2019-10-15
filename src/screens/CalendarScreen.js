@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking, ScrollView, Image, AsyncStorage } from 'react-native';
-import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import PropTypes from 'prop-types';
 
@@ -72,14 +71,12 @@ class CalendarScreen extends React.Component {
     return (
       <View style ={{flex: 1}}>
       <ScrollView>
-      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
           <View>
             {this.renderEmotions()}
           </View>
           <View>
             {this.renderJournalEntries()}
           </View>
-      </LinearGradient>
       </ScrollView>
       </View>
     );
@@ -124,6 +121,7 @@ const styles = StyleSheet.create ({
     marginBottom: 15,
     marginLeft: 10,
     marginRight: 10,
+    alignItems: 'center',
   },
   text1: {
     fontSize: 20,

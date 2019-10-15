@@ -33,7 +33,7 @@ class SettingScreen extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <View style= {styles.background}>
       <View style= {styles.top}>
         <View style= {styles.cont}><Text style= {styles.text1}>Change Password</Text></View>
         <TouchableOpacity onPress={(ev) => this.changeCode(ev)}>
@@ -41,7 +41,7 @@ class SettingScreen extends React.Component {
         </TouchableOpacity>
         <View style= {styles.cont}><Text style= {styles.text1}>Logout           </Text></View>
       </View>
-      </LinearGradient>
+      </View>
     );
   }
 

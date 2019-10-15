@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, FlatList, ScrollView, Platform, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo';
 import { Lost, ListItem } from 'react-native-elements'
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 
@@ -17,7 +16,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['#ffffff','#ffffff']} style={styles.background}>
+      
         <View style={styles.nav}>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('SafetyPlan')}>
           <Image source={require("./app-icons/safetyPlan.png")} style={styles.img} />
@@ -38,7 +37,6 @@ class NavBar extends React.Component {
           <Image source={require("./app-icons/hamburger.png")} style={styles.img} />
         </TouchableOpacity>
         </View>
-      </LinearGradient>
       );
   }
 }
@@ -61,15 +59,6 @@ const styles = StyleSheet.create ({
     justifyContent: 'center',
     paddingTop: 10,
     paddingBottom: 10,
-    alignItems: 'center',
-  },
-  background: {
-    position: 'absolute',
-    flex: 1,
-    left: 0,
-    right: 0,
-    top: 0,
-    height: height, /*verticalScale(700),*/
     alignItems: 'center',
   },
   cont: {
@@ -104,6 +93,7 @@ const styles = StyleSheet.create ({
   nav: {
     flex: 1, 
     flexDirection: 'row',
+    bottom: 0,
   }
 });
 

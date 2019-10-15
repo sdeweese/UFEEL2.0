@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking, Image, ScrollView } from 'react-native';
-import { LinearGradient } from 'expo';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 
 class Caps extends React.Component {
@@ -48,8 +47,13 @@ class Caps extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
-      <ScrollView>
+      <View style= {{flex:1}}>
+      <ScrollView
+           ref={(scrollView) => { this.scrollView = scrollView; }}
+            contentContainerStyle={{
+              maxheight: 1000,
+            }}
+            scrollToOverflowEnabled={true}>
           <TouchableOpacity onPress={()=>{Linking.openURL('https://www.scu.edu/cowell/caps/');}}>
             <View style= {styles.title}>
               <Text style= {styles.titleText}>About CAPS</Text>
@@ -86,7 +90,7 @@ class Caps extends React.Component {
           </View>
           </View>
           </ScrollView>
-      </LinearGradient>
+      </View>
     )
   }
 }

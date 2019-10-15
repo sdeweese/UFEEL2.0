@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking } from 'react-native';
-import { LinearGradient } from 'expo';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Alert, Linking, ScrollView } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 
 class Shs extends React.Component {
@@ -23,7 +22,13 @@ class Shs extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
+      <View style= {{flex:2}}>
+      <ScrollView
+           ref={(scrollView) => { this.scrollView = scrollView; }}
+            contentContainerStyle={{
+              maxheight: 1000,
+            }}
+            scrollToOverflowEnabled={true}>
         <View style= {styles.title}>
           <Text style={styles.titleText}>Student Health Services</Text>
         </View>
@@ -45,8 +50,9 @@ class Shs extends React.Component {
                 </TouchableOpacity>
               </View>
           </View>
-      </LinearGradient>
-    )
+      </ScrollView>
+      </View>
+    );
   }
 }
 
@@ -122,7 +128,7 @@ const styles = StyleSheet.create ({
     borderWidth: 2,
     height: 50,
     borderRadius: 15,
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
     flexDirection: 'column',
     padding: 5,
     margin: 5,

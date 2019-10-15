@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, FlatList, ScrollView, Platform, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo';
 import { Lost, ListItem } from 'react-native-elements'
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 
@@ -18,9 +17,7 @@ class WellnessScreen extends React.Component {
 
   render() {
     return (
-     <View style= {{flex: 1}}>
-      <LinearGradient colors={['white', 'white']} style={styles.background} location={[0.3, 0.4, 1]}>
-       
+     <View style= {{flex: 1}}>       
          <ScrollView
            ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
@@ -127,7 +124,6 @@ class WellnessScreen extends React.Component {
         </View>
         </View>
         </ScrollView>
-      </LinearGradient>
       </View>
     );
   }

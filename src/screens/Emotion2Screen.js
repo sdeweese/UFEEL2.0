@@ -24,7 +24,7 @@ class Emotion2Screen extends React.Component {
 
     console.log("Emotion: ", emo);
     this.props.setEmotion2(emo);
-    this.props.navigation.navigate('Emotion3');
+    this.props.navigation.navigate('Emotion3'); 
   }
 
   renderElement() {
