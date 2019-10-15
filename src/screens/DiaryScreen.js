@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { StyleSheet, Text, TextInput, View, Dimensions, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Dimensions, TouchableOpacity, ScrollView, Platform } from 'react-native';
 import { LinearGradient } from 'expo';
 import { Icon } from 'react-native-elements'
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
@@ -118,7 +118,7 @@ class DiaryScreen extends React.Component {
       justifyContent: 'space-around',
     },
     inputText: {
-      fontFamily: 'Futura',
+      fontFamily: Platform.OS === 'android' ? 'sans-serif' : 'Futura',
       fontSize: moderateScale(15),
       color: 'black',
       paddingLeft: 15,
@@ -134,7 +134,6 @@ class DiaryScreen extends React.Component {
       justifyContent: 'flex-start',
       marginLeft: 10,
       borderRadius: 10,
-
     },
     view: {
       borderColor: 'black',
