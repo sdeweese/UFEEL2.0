@@ -71,6 +71,25 @@ class WellnessScreen extends React.Component {
                 <Text style= {styles.text2}>"Source for books on mental health and anxiety"</Text>
               </TouchableOpacity>
             </View>
+            <View style= {styles.cont}>
+                <Text style= {styles.text1}>Additional Books</Text>
+                <Text style= {styles.text2}>
+                    • Full Catastrophe Living (Revised Edition): Using the Wisdom of Your Body and Mind to Face Stress, Pain, and Illness by Jon Kabat-Zinn{"\n"}
+                    • Mindfulness in Plain English by Henepola Gunaratana{"\n"} 
+                    • The Happiness Trap: How to Stop Struggling and Start Living: A Guide to ACT by Russ Harris{"\n"} 
+                    • The Mindfulness and Acceptance Workbook for Anxiety: A Guide to Breaking Free from Anxiety, Phobias, and Worry Using Acceptance and Commitment Therapy by John P. Forsyth and Georg H. Eifert{"\n"}
+                    • Self-Compassion: The Proven Power of Being Kind to Yourself by Dr. Kristin Neff{"\n"}
+                    • Things Might Go Terribly, Horribly Wrong: A Guide to Life Liberated from Anxiety M. Troy DuFrene and Kelly G. Wilson{"\n"}                        
+                    • The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma by Bessel van der Kolk{"\n"}
+                    • Reasons to Stay Alive by Matt Haig{"\n"}
+                    • The Anxiety and Phobia Workbook by Edmund J. Bourne{"\n"}
+                    • Unfu*k Yourself: Get Out of Your Head and Into Your Life by Gary John Bishop{"\n"}
+                    • Feeling Good: The New Mood Therapy by David D. Burns, MD{"\n"}
+                    • Trauma and Recovery by Judith Herman{"\n"}
+                    • Mindfulness Skills Workbook by Debra Burdick{"\n"}
+                    • 101 Trauma Informed Interventions by Linda A. Curran
+                </Text>
+            </View>
             <View style= {styles.headContain}>
               <Text style= {styles.subHead}>Spotify Podcasts</Text>
             </View>
@@ -90,6 +109,12 @@ class WellnessScreen extends React.Component {
               <TouchableOpacity onPress={()=>{Linking.openURL('https://open.spotify.com/show/2zS57s6LwstXGD9gkoKWsC?si=LRWJVGB8RoibxSQKTfTncA');}}>
                 <Text style= {styles.text1}>Mental health in Pop culture</Text>
                 <Text style= {styles.text2}>"Professor and students analyze the sort of normalization of mental health issues in movies/ media/ television. Could be good to break stereotypes"</Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://open.spotify.com/show/3i5TCKhc6GY42pOWkpWveG');}}>
+                <Text style= {styles.text1}>The Happiness Lab</Text>
+                <Text style= {styles.text2}>"Yale professor Dr. Laurie Santos will take you through the latest scientific research and share some surprising and inspiring stories that will forever alter the way you think about happiness."</Text>
               </TouchableOpacity>
             </View>
             <View style= {styles.headContain}>

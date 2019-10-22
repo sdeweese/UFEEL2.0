@@ -33,6 +33,14 @@ class SafetyPlan extends React.Component {
             </TouchableOpacity>
         </View>
         <View style= {styles.cont}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.crisistextline.org/')}>
+              <Text style= {styles.text1}>Text Crisis Line</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('tel:741741')}>
+              <Text style= {styles.text2}>If calling seems too intense, try texting 'HOME' to 741741.</Text>
+            </TouchableOpacity>
+          </View>
+          <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('https://docs.google.com/document/d/1ati707c38BVhA55Hk62hjayg0qqRAl0kqZh-LgERGY4/edit?usp=sharing')}> 
               <Text style= {styles.text1}>Safety Plan</Text>
             </TouchableOpacity>
