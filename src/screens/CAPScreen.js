@@ -53,7 +53,7 @@ class Caps extends React.Component {
       <ScrollView
            ref={(scrollView) => { this.scrollView = scrollView; }}
             contentContainerStyle={{
-              maxheight: height,
+              maxheight: 1000,
             }}
             scrollToOverflowEnabled={true}>
           <TouchableOpacity onPress={()=>{Linking.openURL('https://www.scu.edu/cowell/caps/');}}>
@@ -62,21 +62,19 @@ class Caps extends React.Component {
             </View>
           </TouchableOpacity>
           <View style= {styles.format}>
-          <View style= {styles.info}>
-            <Text style= {styles.text}>{this.state.capMission}</Text>
+            <View style= {styles.info}>
+              <Text style= {styles.text}>{this.state.capMission}</Text>
+            </View>
+            <View style= {styles.info}>
+              <Text style= {styles.text}>{this.state.capSummary}</Text>
+            </View>
+            <View style= {styles.info}>
+                <Text style= {styles.text1}>{this.state.crisisHours}</Text>
+            </View>
+            <View style= {styles.info}>
+              <Text style= {styles.text1}>{this.state.emergencies}</Text>
+            </View>
           </View>
-          <View style= {styles.info}>
-            <Text style= {styles.text}>{this.state.capSummary}</Text>
-          </View>
-          <View style= {styles.info}>
-              <Text style= {styles.text1}>{this.state.crisisHours}</Text>
-          </View>
-          <View style= {styles.info}>
-            <Text style= {styles.text1}>{this.state.emergencies}</Text>
-          </View>
-          </View>
-
-          <View style={{ flexDirection: 'row' }}>
           <View style= {styles.buttonContainer}>
             <TouchableOpacity onPress={(ev) => this.contact(ev)} style= {styles.button}>
               <View style= {styles.button1}>
@@ -87,10 +85,9 @@ class Caps extends React.Component {
           <View style= {styles.buttonContainer}>
             <TouchableOpacity onPress={(ev) => this.linkems(ev)} style= {styles.button}>
               <View style= {styles.button1}>
-                <Text style= {styles.butText}>More Information on EMS</Text>
+                <Text style= {styles.butText}>More EMS Information</Text>
               </View>
             </TouchableOpacity>
-          </View>
           </View>
           </ScrollView>
       </View>
@@ -112,12 +109,12 @@ const styles = StyleSheet.create ({
   },
   format: {
     flex: 1,
-    paddingBottom: 12,
+    paddingBottom: 5,
   },
   text: {
     backgroundColor: '#ffffff',
     padding: 10,
-    marginBottom: 5,
+    marginBottom: 15,
     marginLeft: 5,
     marginRight: 5,
     overflow: 'hidden',
@@ -132,8 +129,8 @@ const styles = StyleSheet.create ({
     alignContent: 'center',
     borderRadius: 10,
     overflow: 'hidden',
-    padding: 2,
-    margin: 5,
+    padding: 5,
+    margin: 10,
     fontSize: 15,
   },
   text1: {
@@ -171,7 +168,7 @@ const styles = StyleSheet.create ({
     flexDirection: 'column'
   },
   butText: {
-    justifyContent:  'center',
+    justifyContent: 'center',
     fontSize: 12,
     padding: 10,
     flexDirection: 'row',
@@ -180,10 +177,10 @@ const styles = StyleSheet.create ({
   },
   buttonContainer: {
       flex: 1,
-      height: 50,
+      height: 100,
       flexDirection: 'row',
-      justifyContent:  'center',
-      margin: 2,
+      justifyContent: 'center',
+      margin: 5,
   },
   button1: {
     flexDirection: 'row',

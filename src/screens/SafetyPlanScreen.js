@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, Platform } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Linking, Platform, ScrollView } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../scaler.js';
 import Communications from 'react-native-communications';
 
@@ -15,7 +15,13 @@ class SafetyPlan extends React.Component {
 
   render() {
     return (
-      <View style={styles.background}>
+      <View style={{flex: 1}}>
+        <ScrollView
+           ref={(scrollView) => { this.scrollView = scrollView; }}
+            contentContainerStyle={{
+              maxheight: 1000,
+            }}
+            scrollToOverflowEnabled={true}>
         <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('http://www.ulifeline.org/')}> 
               <Text style= {styles.text1}>Ulifeline</Text>
@@ -53,14 +59,23 @@ class SafetyPlan extends React.Component {
               <Text style= {styles.text1}>Love Is Respect</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => Linking.openURL('tel:8663319474')}>
-              <Text style= {styles.text2}>"If you've experienced intimate partner violence or think that someone you know is in an abusive relationship, you're not alone. We're here if you need to talk." Call 800-656-4673 or text loveis to 22522</Text>
+              <Text style= {styles.text2}>"If you've experienced intimate partner violence or think that someone you know is in an abusive relationship, you're not alone. We're here if you need to talk." Call (800)656-4673 or text loveis to 22522</Text>
             </TouchableOpacity>
           </View>
+          <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://ywca-sv.org/');}}>
+                <Text style= {styles.text1}>YWCA Silicon Valley</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => Linking.openURL('tel:8005722782')}>
+                <Text style= {styles.text2}>"At YWCA Silicon Valley, one of the first multiservice agency in the Bay Area, we are committed to eliminating racism and empowering women by not only a depth of direct service to survivors of domestic violence, sexual assault and human trafficking, but also towards bold systems change." Call (800)572-2782</Text>
+                </TouchableOpacity>
+            </View>
           <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('https://docs.google.com/document/d/1ati707c38BVhA55Hk62hjayg0qqRAl0kqZh-LgERGY4/edit?usp=sharing')}> 
               <Text style= {styles.text1}>Safety Plan</Text>
             </TouchableOpacity>
-        </View>
+          </View>
+        </ScrollView>
       </View>
     );
   }

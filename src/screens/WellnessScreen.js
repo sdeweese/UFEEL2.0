@@ -75,12 +75,6 @@ class WellnessScreen extends React.Component {
               <Text style= {styles.subHead}>Sexual and Dating Violence Support</Text>
             </View>
             <View style= {styles.cont}>
-              <TouchableOpacity onPress={()=>{Linking.openURL('https://ywca-sv.org/');}}>
-                <Text style= {styles.text1}>YWCA Silicon Valley</Text>
-                <Text style= {styles.text2}>"At YWCA Silicon Valley, one of the first multiservice agency in the Bay Area, we are committed to eliminating racism and empowering women by not only a depth of direct service to survivors of domestic violence, sexual assault and human trafficking, but also towards bold systems change."</Text>
-              </TouchableOpacity>
-            </View>
-            <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.futureswithoutviolence.org/');}}>
                 <Text style= {styles.text1}>Futures Without Violence</Text>
                 <Text style= {styles.text2}>"From domestic violence and child abuse, to bullying and sexual assault, our groundbreaking programs, policy development, and public action campaigns are designed to prevent and end violence against women and children around the world."</Text>
@@ -107,7 +101,7 @@ class WellnessScreen extends React.Component {
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.everydayhealth.com/reviews/best-self-books-mental-health-anxiety/');}}>
-                <Text style= {styles.text1}>Books</Text>
+                <Text style= {styles.text1}>Every Day Health</Text>
                 <Text style= {styles.text2}>"Source for books on mental health and anxiety"</Text>
               </TouchableOpacity>
             </View>
@@ -147,7 +141,7 @@ class WellnessScreen extends React.Component {
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://open.spotify.com/show/2zS57s6LwstXGD9gkoKWsC?si=LRWJVGB8RoibxSQKTfTncA');}}>
-                <Text style= {styles.text1}>Mental health in Pop culture</Text>
+                <Text style= {styles.text1}>Mental Health in Pop Culture</Text>
                 <Text style= {styles.text2}>"Professor and students analyze the sort of normalization of mental health issues in movies/ media/ television. Could be good to break stereotypes"</Text>
               </TouchableOpacity>
             </View>
@@ -162,13 +156,13 @@ class WellnessScreen extends React.Component {
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={() => Linking.openURL('https://www.youtube.com/watch?v=S8bJ3YlgL1Q')}>
-                <Text style= {styles.text1}>Casually suicidal</Text>
-                <Text style= {styles.text2}>"TEDx talk, Adelphi Univ"</Text>
+                <Text style= {styles.text1}>Casually Suicidal</Text>
+                <Text style= {styles.text2}>"TEDx talk, Adelphi University"</Text>
               </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.youtube.com/watch?v=m-8tQ_TYLgk');}}>
-                <Text style= {styles.text1}>How to connect with depressed friends</Text>
+                <Text style= {styles.text1}>How to Connect with Depressed Friends</Text>
               </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
