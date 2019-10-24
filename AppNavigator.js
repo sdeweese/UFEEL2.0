@@ -70,13 +70,6 @@ const AppNavigator = createStackNavigator({
         title: 'Register',
       }
     },
-    Dashboard: {
-      screen: Dashboard,
-      navigationOptions: {
-        title: 'Dashboard',
-        headerLeft: null
-      }
-    },
     Diary: {
       screen: Diary,
       navigationOptions: {
