@@ -1,25 +1,19 @@
 import { Animated, Easing } from "react-native";
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Login from './src/screens/LoginScreen.js';
-import Dashboard from './src/screens/DashboardScreen.js';
 import Diary from './src/screens/DiaryScreen.js';
 import Register from './src/screens/RegisterScreen.js';
 import Resource from './src/screens/ResourceScreen.js';
 import Caps from './src/screens/CAPScreen.js';
 import Shs from './src/screens/SHScreen.js';
-//import Safety from './src/screens/SafetyScreen.js';
 import SafetyPlan from './src/screens/SafetyPlanScreen.js';
 import Emotion1 from './src/screens/Emotion1Screen.js';
 import Emotion2 from './src/screens/Emotion2Screen.js';
 import Emotion3 from './src/screens/Emotion3Screen.js';
-//import User from './src/screens/UserScreen.js';
-//import Entry from './src/screens/EntryScreen.js';
 import Settings from './src/screens/Settings.js';
 import Help from './src/screens/Help.js';
 import Wellness from './src/screens/WellnessScreen.js';
-//import Podcast from './src/screens/PodcastScreen.js';
 import NavBar from './src/screens/NavbarScreen.js';
-//import PinWindow from './src/screens/PinScreen.js';
 import Calendar from './src/screens/CalendarScreen.js';
 
 const transitionConfig = () => {
@@ -114,12 +108,6 @@ const AppNavigator = createStackNavigator({
         title: 'SHS',
       }
     },
-    /*Safety: {
-      screen: Safety,
-      navigationOptions: {
-        title: 'Safety',
-      }
-    },*/
     Emotion1: {
       screen: Emotion1,
       navigationOptions: {
@@ -144,30 +132,12 @@ const AppNavigator = createStackNavigator({
         title: 'Settings'
       }
     },
-    /*User: {
-      screen: User,
-      navigationOptions: {
-        title: 'User'
-      }
-    },*/
     Wellness: {
       screen: Wellness,
       navigationOptions: {
         title: 'Wellness'
       }
     },
-    /*Podcast: {
-      screen: Podcast,
-      navigationOptions: {
-        title: 'Podcast & Videos'
-      }
-    },
-    Entry: {
-      screen: Entry,
-      navigationOptions: {
-        title: 'Journal Entries'
-      }
-    },*/
     Calendar: {
       screen: Calendar,
       navigationOptions: {
@@ -191,16 +161,6 @@ const AppNavigator = createStackNavigator({
     initialRouteName: "Emotion1", //change back to Emotion1
     transitionConfig
 });
-    /*},
-    } 
-     Pins: {
-       screen: Pin,
-       navigationOptions: {
-        title: 'Pin'
-      }
-    }
-  },*/
-
 
 let Navigation = createAppContainer(AppNavigator)
 

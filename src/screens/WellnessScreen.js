@@ -51,13 +51,74 @@ class WellnessScreen extends React.Component {
                 <Text style= {styles.text2}>"Do you struggle with some of your thoughts and feelings? Are you looking for ways to improve your emotional well-being? Moodpath is your personalized mental health companion. Try it out and find a place to reflect and get information, encouragement, and guidance."</Text>
             </View>
             <View style= {styles.headContain}>
-              <Text style= {styles.subHead}>Books and Info</Text>
+              <Text style= {styles.subHead}>Website Resources</Text>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.psychologytoday.com/us')}>
+                <Text style= {styles.text1}>Psychology Today</Text>
+                <Text style= {styles.text2}>"A a group of renowned psychologists, academics, psychiatrists and writers to contribute their thoughts and ideas. We're a live stream of what's happening in 'psychology today'."</Text>
+              </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={() => Linking.openURL('https://www.nami.org/Personal-Stories/-It-Gets-Better#')}>
                 <Text style= {styles.text1}>NAMI</Text>
-                <Text style= {styles.text2}>"National Alliance on Mental Illness: Personal Stories"</Text>
+                <Text style= {styles.text2}>"National Alliance on Mental Illness -- Personal Stories"</Text>
               </TouchableOpacity>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.nami.org/collegeguide/download')}>
+                <Text style= {styles.text1}>NAMI</Text>
+                <Text style= {styles.text2}>"National Alliance on Mental Illness -- Starting the Conversation: College and Your Mental Health"</Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.headContain}>
+              <Text style= {styles.subHead}>Sexual Violence Support</Text>
+            </View>
+
+
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://www.rainn.org/');}}>
+                <Text style= {styles.text1}>Rainn</Text>
+                <Text style= {styles.text2}>"RAINN (Rape, Abuse & Incest National Network) is the nation's largest anti-sexual violence organization."</Text>
+              </TouchableOpacity>
+            </View>
+
+
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://ywca-sv.org/');}}>
+                <Text style= {styles.text1}>YWCA Silicon Valley</Text>
+                <Text style= {styles.text2}>"At YWCA Silicon Valley, one of the first multiservice agency in the Bay Area, we are committed to eliminating racism and empowering women by not only a depth of direct service to survivors of domestic violence, sexual assault and human trafficking, but also towards bold systems change."</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style= {styles.headContain}>
+              <Text style= {styles.subHead}>Dating Violence Support</Text>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://www.futureswithoutviolence.org/');}}>
+                <Text style= {styles.text1}>Futures Without Violence</Text>
+                <Text style= {styles.text2}>"From domestic violence and child abuse, to bullying and sexual assault, our groundbreaking programs, policy development, and public action campaigns are designed to prevent and end violence against women and children around the world."</Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('');}}>
+                <Text style= {styles.text1}></Text>
+                <Text style= {styles.text2}>""</Text>
+              </TouchableOpacity>
+            </View>
+            <View style= {styles.cont}>
+              <TouchableOpacity onPress={()=>{Linking.openURL('https://www.cdc.gov/violenceprevention/intimatepartnerviolence/teendatingviolence/fastfact.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fviolenceprevention%2Fintimatepartnerviolence%2Fteen-dating-violence.html');}}>
+                <Text style= {styles.text1}>Preventing Teen Dating Violence</Text>
+                <Text style= {styles.text2}>"Teen dating violence (TDV) is a type of intimate partner violence. It occurs between two people in a close relationship. TDV includes four types of behavior:{"\n"}
+                1. Physical violence is when a person hurts or tries to hurt a partner by hitting, kicking, or using another type of physical force.{"\n"}
+                2. Sexual violence is forcing or attempting to force a partner to take part in a sex act, sexual touching, or a non-physical sexual event (e.g., sexting) when the partner does not or cannot consent.{"\n"}
+                3. Psychological aggression is the use of verbal and non-verbal communication with the intent to harm another person mentally or emotionally and/or exert control over another person.{"\n"}
+                4. Stalking is a pattern of repeated, unwanted attention and contact by a partner that causes fear or concern for one’s own safety or the safety of someone close to the victim."</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style= {styles.headContain}>
+              <Text style= {styles.subHead}>Books and Info</Text>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.activeminds.org/');}}>
