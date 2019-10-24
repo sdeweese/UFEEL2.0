@@ -72,38 +72,18 @@ class WellnessScreen extends React.Component {
               </TouchableOpacity>
             </View>
             <View style= {styles.headContain}>
-              <Text style= {styles.subHead}>Sexual Violence Support</Text>
+              <Text style= {styles.subHead}>Sexual and Dating Violence Support</Text>
             </View>
-
-
-            <View style= {styles.cont}>
-              <TouchableOpacity onPress={()=>{Linking.openURL('https://www.rainn.org/');}}>
-                <Text style= {styles.text1}>Rainn</Text>
-                <Text style= {styles.text2}>"RAINN (Rape, Abuse & Incest National Network) is the nation's largest anti-sexual violence organization."</Text>
-              </TouchableOpacity>
-            </View>
-
-
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://ywca-sv.org/');}}>
                 <Text style= {styles.text1}>YWCA Silicon Valley</Text>
                 <Text style= {styles.text2}>"At YWCA Silicon Valley, one of the first multiservice agency in the Bay Area, we are committed to eliminating racism and empowering women by not only a depth of direct service to survivors of domestic violence, sexual assault and human trafficking, but also towards bold systems change."</Text>
               </TouchableOpacity>
             </View>
-
-            <View style= {styles.headContain}>
-              <Text style= {styles.subHead}>Dating Violence Support</Text>
-            </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.futureswithoutviolence.org/');}}>
                 <Text style= {styles.text1}>Futures Without Violence</Text>
                 <Text style= {styles.text2}>"From domestic violence and child abuse, to bullying and sexual assault, our groundbreaking programs, policy development, and public action campaigns are designed to prevent and end violence against women and children around the world."</Text>
-              </TouchableOpacity>
-            </View>
-            <View style= {styles.cont}>
-              <TouchableOpacity onPress={()=>{Linking.openURL('');}}>
-                <Text style= {styles.text1}></Text>
-                <Text style= {styles.text2}>""</Text>
               </TouchableOpacity>
             </View>
             <View style= {styles.cont}>
@@ -116,7 +96,6 @@ class WellnessScreen extends React.Component {
                 4. Stalking is a pattern of repeated, unwanted attention and contact by a partner that causes fear or concern for one’s own safety or the safety of someone close to the victim."</Text>
               </TouchableOpacity>
             </View>
-
             <View style= {styles.headContain}>
               <Text style= {styles.subHead}>Books and Info</Text>
             </View>

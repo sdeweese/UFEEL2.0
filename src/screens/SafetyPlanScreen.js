@@ -37,7 +37,23 @@ class SafetyPlan extends React.Component {
               <Text style= {styles.text1}>Text Crisis Line</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => Linking.openURL('tel:741741')}>
-              <Text style= {styles.text2}>If calling seems too intense, try texting 'HOME' to 741741.</Text>
+              <Text style= {styles.text2}>If calling seems too overwhelming, try texting 'HOME' to 741741.</Text>
+            </TouchableOpacity>
+          </View>
+          <View style= {styles.cont}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.rainn.org/')}>
+              <Text style= {styles.text1}>RAINN: Rape, Abuse & Incest National Network</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('tel:8006564673')}>
+              <Text style= {styles.text2}>"If you've experienced intimate partner violence or think that someone you know is in an abusive relationship, you're not alone. We're here if you need to talk." Call 800-656-4673</Text>
+            </TouchableOpacity>
+          </View>
+          <View style= {styles.cont}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.loveisrespect.org/')}>
+              <Text style= {styles.text1}>Love Is Respect</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('tel:8663319474')}>
+              <Text style= {styles.text2}>"If you've experienced intimate partner violence or think that someone you know is in an abusive relationship, you're not alone. We're here if you need to talk." Call 800-656-4673 or text loveis to 22522</Text>
             </TouchableOpacity>
           </View>
           <View style= {styles.cont}>
