@@ -90,12 +90,6 @@ const AppNavigator = createStackNavigator({
         title: 'SCU Resources',
       }
     },
-    Resource: {
-      screen: Resource,
-      navigationOptions: {
-        title: 'Resource',
-      }
-    },
     Caps: {
       screen: Caps,
       navigationOptions: {
