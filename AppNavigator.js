@@ -3,7 +3,6 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Login from './src/screens/LoginScreen.js';
 import Diary from './src/screens/DiaryScreen.js';
 import Register from './src/screens/RegisterScreen.js';
-import Resource from './src/screens/ResourceScreen.js';
 import Caps from './src/screens/CAPScreen.js';
 import Shs from './src/screens/SHScreen.js';
 import SafetyPlan from './src/screens/SafetyPlanScreen.js';
