@@ -140,48 +140,21 @@ class Emotion2Screen extends React.Component {
 
 const styles = StyleSheet.create ({
 
-  header: {
-    justifyContent: 'center',
-    flex: 1,
-    marginBottom: 5,
-
-  },
-
-  headText: {
-    fontSize: 40,
-    justifyContent: 'center',
-    alignContent: 'center',
-    paddingLeft: 90,
-
-  },
-
   format: {
-        flex: 1,
-        justifyContent: 'space-between',
         justifyContent: 'center',
+        alignContent: 'center',
         backgroundColor: '#ffffff'
   },
   emoButton: {
-    justifyContent: 'space-between',
-    justifyContent: 'center',
     backgroundColor: '#ffffff',
     borderRadius: 40,
     borderWidth: 2,
-    padding: 20,
-    marginTop: 15,
-    marginBottom: 15,
-    marginLeft: 10,
-    marginRight: 10,
+    margin: '2%',
     fontSize: 30,
   },
   text: {
     fontSize: 30,
   },
-  border: {
-    height: verticalScale(700),
-    backgroundColor: '#ffffff'
-  }
-
 });
 
 Emotion2Screen.propTypes = {

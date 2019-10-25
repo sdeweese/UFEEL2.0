@@ -69,7 +69,7 @@ class Emotion3Screen extends React.Component {
       console.log("There was an error saving the product");
     });
 
-    this.props.navigation.navigate('NavBar'); //should change to Diary
+    this.props.navigation.navigate('Root');
   }
 
   renderElement() {
@@ -581,47 +581,31 @@ class Emotion3Screen extends React.Component {
 const styles = StyleSheet.create ({
 
   header: {
-    justifyContent: 'center',
-    flex: 1,
     marginBottom: 5,
-
   },
 
   headText: {
-    fontSize: 40,
+    fontSize: 30,
     justifyContent: 'center',
-    alignContent: 'center',
-    paddingLeft: 90,
+    textAlign: 'center',
 
   },
 
   format: {
-        flex: 1,
-        justifyContent: 'space-between',
         justifyContent: 'center',
+        alignContent: 'center',
         backgroundColor: '#ffffff'
   },
   emoButton: {
-    justifyContent: 'space-between',
-    justifyContent: 'center',
     backgroundColor: '#ffffff',
     borderRadius: 40,
     borderWidth: 2,
-    padding: 20,
-    marginTop: 15,
-    marginBottom: 15,
-    marginLeft: 10,
-    marginRight: 10,
+    margin: '2%',
     fontSize: 30,
   },
   text: {
     fontSize: 30,
   },
-  border: {
-    height: verticalScale(700),
-    backgroundColor: '#ffffff'
-  },
-
 });
 
 Emotion3Screen.propTypes = {
