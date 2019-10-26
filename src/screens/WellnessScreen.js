@@ -74,6 +74,14 @@ class WellnessScreen extends React.Component {
             <View style= {styles.headContain}>
               <Text style= {styles.subHead}>Sexual and Dating Violence Support</Text>
             </View>
+          <View style= {styles.cont}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.scu.edu/title-ix/')}>
+              <Text style= {styles.text1}>Title IX</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('tel:4085513043')}>
+              <Text style= {styles.text2}>Call (408)551-3043 if you or someone you know is a victim of sexual misconduct.</Text>
+            </TouchableOpacity>
+          </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.futureswithoutviolence.org/');}}>
                 <Text style= {styles.text1}>Futures Without Violence</Text>

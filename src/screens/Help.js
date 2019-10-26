@@ -54,16 +54,6 @@ class Help extends React.Component {
               <Text style= {styles.text2}>The SHS is open M-F 8:30am-5:00pm. It is located between the Malley Fitness and Recreation Center and the tennis courts on the east side of campus.</Text>
             </TouchableOpacity>
           </View>
-
-          <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('https://www.scu.edu/title-ix/')}>
-              <Text style= {styles.text1}>Title IX</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => Linking.openURL('tel:4085513043')}>
-              <Text style= {styles.text2}>Call (408)551-3043 if you or someone you know is a victim of sexual misconduct.</Text>
-            </TouchableOpacity>
-          </View>
-
           </View>
         </View>
         </ScrollView>
