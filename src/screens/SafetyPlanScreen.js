@@ -42,9 +42,7 @@ class SafetyPlan extends React.Component {
             <TouchableOpacity onPress={() => Linking.openURL('https://www.crisistextline.org/')}>
               <Text style= {styles.text1}>Text Crisis Line</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => Linking.openURL('tel:741741')}>
-              <Text style= {styles.text2}>If calling seems too overwhelming, try texting 'HOME' to 741741.</Text>
-            </TouchableOpacity>
+            <Text style= {styles.text2}>If calling seems too overwhelming, try texting 'HOME' to 741741.</Text>
           </View>
           <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('https://www.rainn.org/')}>

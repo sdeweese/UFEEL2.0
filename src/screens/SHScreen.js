@@ -11,7 +11,7 @@ class Shs extends React.Component {
     this.state = {
       shsummary: "The Cowell Center Student Health Services is applying for accreditation through the Accreditation Association for Ambulatory Health Care, Inc. We are staffed by licensed and/or board-certified nurse practitioners, a physician, a physician assistant, a dietitian and nurses who will address your needs in a sensitive, compassionate and confidential manner. The campus physician, nurse practitioners, and physician assistant see students by appointment and will see walk-in students with urgent needs. The nursing staff is available during all open hours to assist students with less urgent health care concerns. In addition to our regular staff, we offer appointments with specialists including a physical therapist assistant and a registered dietitian.",
       shsMission: "Student Health Services seeks to participate in and support the vision of the University to make student learning its central focus. The health services is committed to delivering quality health care to students and helping to preserve their ability to function at their full potential.",
-      nurseContact: "Contact the Nurse Advice Line for medical advice and/or inquiries",
+      nurseContact: "Contact the Nurse Advice Line for medical advice and/or inquiries at (408)554-4880.",
       closure: "The Student Health Services is closed during summer and all University holidays.",
     };
   }
@@ -42,7 +42,9 @@ class Shs extends React.Component {
             <Text style= {styles.text}>{this.state.shsMission}</Text>
           </View>
           <View style= {styles.info}>
+          <TouchableOpacity onPress={()=>{Linking.openURL('tel:4085544880');}}>
             <Text style= {styles.text}>{this.state.nurseContact}</Text>
+          </TouchableOpacity>
           </View>
               <View style= {styles.buttonContainer}>
                 <TouchableOpacity onPress={(ev) => this.linkshs(ev)} style= {styles.button}>
