@@ -13,7 +13,7 @@ class DiaryScreen extends React.Component {
     this.state = {
       text: '',
       height: 0,
-      textHeight: 100
+      textHeight: 50
     };
   }
 
@@ -110,7 +110,7 @@ class DiaryScreen extends React.Component {
       right: 0,
       top: 0,
       opacity: 0.7,
-      height: verticalScale(700),
+      height: verticalScale(600),
       alignItems: 'center',
       justifyContent: 'space-around',
     },
@@ -120,9 +120,10 @@ class DiaryScreen extends React.Component {
       color: 'black',
       paddingLeft: 15,
       paddingHorizontal: 15,
+      alignItems: 'center',
     },
     input: {
-      height: verticalScale(200),
+      height: verticalScale(100),
       width: scale(300),
       bottom: 150,
       borderColor: 'black',
