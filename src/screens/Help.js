@@ -32,7 +32,7 @@ class Help extends React.Component {
             }}
             scrollToOverflowEnabled={true}>
         <View style= {styles.header}>
-          <Text style= {styles.headText}>Emergency Contacts</Text>
+          <Text style= {styles.headText}>Contacts</Text>
         <View>
           <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('tel:4085544444')}>
