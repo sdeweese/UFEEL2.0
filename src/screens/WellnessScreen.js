@@ -27,7 +27,7 @@ class WellnessScreen extends React.Component {
         <View style= {styles.header}>
           <View style= {{flex: 1}}>
             <View style= {styles.headContain}>
-              <Text style= {styles.subHead}>Meditation Apps</Text>
+              <Text style= {styles.subHead}>Apps</Text>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={() => Linking.openURL('https://www.headspace.com/headspace-meditation-app')}>
@@ -160,7 +160,7 @@ class WellnessScreen extends React.Component {
               </TouchableOpacity>
             </View>
             <View style= {styles.headContain}>
-              <Text style= {styles.subHead}>YouTube Videos</Text>
+              <Text style= {styles.subHead}>Videos</Text>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={() => Linking.openURL('https://www.youtube.com/watch?v=S8bJ3YlgL1Q')}>
