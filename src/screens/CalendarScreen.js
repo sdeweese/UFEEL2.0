@@ -21,13 +21,16 @@ class CalendarScreen extends React.Component {
     this.state = {
       emotes: this.props.emotion.emotes,
       entries: this.props.diary.entries,
-      currentMonth: ""
+      currentMonth: "",
     };
   }
 
   componentDidMount() {
-    console.log("Emotions in calendar screen: ", this.state.emotes);
+    /*console.log("Emotions in calendar screen: ", this.state.emotes);*/
     console.log("Diary: ", this.props.diary);
+    story = `Story has read your diary!`;
+    console.log(`${story}`); //at this point, the most recent jounral entry screen is not rendered, even though it was saved using the submit button on the diary screen
+
     var month = new Date().getMonth() + 1;
     var strmonth = month.toString();
 
@@ -54,14 +57,18 @@ class CalendarScreen extends React.Component {
   }
 
   renderJournalEntries() {
+    let counter = 1;
     return this.state.entries.map((e) => {
+      if (emo.month === this.state.currentMonth) {
         return (
           <View style= {styles.cont}>
               <Text style= {styles.text1}>Time: {e.time}</Text>
               <Text style= {styles.text1}>{e.entry}</Text>
           </View>
         )
+        counter++;
       }
+    }
     );
   }
 
@@ -143,7 +150,7 @@ CalendarScreen.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-     console.log(state);
+    console.log(state);
     return {
       emotion: state.emotions,
       time: state.time,

@@ -51,7 +51,7 @@ class WellnessScreen extends React.Component {
                 <Text style= {styles.text2}>"Do you struggle with some of your thoughts and feelings? Are you looking for ways to improve your emotional well-being? Moodpath is your personalized mental health companion. Try it out and find a place to reflect and get information, encouragement, and guidance."</Text>
             </View>
             <View style= {styles.headContain}>
-              <Text style= {styles.subHead}>Website Resources</Text>
+              <Text style= {styles.subHead}>Websites</Text>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={() => Linking.openURL('https://www.psychologytoday.com/us')}>
@@ -71,17 +71,6 @@ class WellnessScreen extends React.Component {
                 <Text style= {styles.text2}>"National Alliance on Mental Illness -- Starting the Conversation: College and Your Mental Health"</Text>
               </TouchableOpacity>
             </View>
-            <View style= {styles.headContain}>
-              <Text style= {styles.subHead}>Sexual and Dating Violence Support</Text>
-            </View>
-          <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('https://www.scu.edu/title-ix/')}>
-              <Text style= {styles.text1}>Title IX</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => Linking.openURL('tel:4085513043')}>
-              <Text style= {styles.text2}>Call (408)551-3043 if you or someone you know is a victim of sexual misconduct.</Text>
-            </TouchableOpacity>
-          </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={()=>{Linking.openURL('https://www.futureswithoutviolence.org/');}}>
                 <Text style= {styles.text1}>Futures Without Violence</Text>
@@ -98,6 +87,14 @@ class WellnessScreen extends React.Component {
                 4. Stalking is a pattern of repeated, unwanted attention and contact by a partner that causes fear or concern for one’s own safety or the safety of someone close to the victim."</Text>
               </TouchableOpacity>
             </View>
+          <View style= {styles.cont}>
+            <TouchableOpacity onPress={() => Linking.openURL('https://www.scu.edu/title-ix/')}>
+              <Text style= {styles.text1}>Title IX</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('tel:4085513043')}>
+              <Text style= {styles.text2}>Call (408)551-3043 if you or someone you know is a victim of sexual misconduct.</Text>
+            </TouchableOpacity>
+          </View>
             <View style= {styles.headContain}>
               <Text style= {styles.subHead}>Books and Info</Text>
             </View>
@@ -133,7 +130,7 @@ class WellnessScreen extends React.Component {
                 </Text>
             </View>
             <View style= {styles.headContain}>
-              <Text style= {styles.subHead}>Spotify Podcasts</Text>
+              <Text style= {styles.subHead}>Podcasts</Text>
             </View>
             <View style= {styles.cont}>
               <TouchableOpacity onPress={() => Linking.openURL('https://open.spotify.com/show/0184ojF3hjFhKfktahQK4G?si=UbCvKkcJRzO1pes2MIJHhA')}>
