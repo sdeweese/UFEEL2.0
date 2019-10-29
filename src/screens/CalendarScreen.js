@@ -59,7 +59,6 @@ class CalendarScreen extends React.Component {
   renderJournalEntries() {
     let counter = 1;
     return this.state.entries.map((e) => {
-      if (emo.month === this.state.currentMonth) {
         return (
           <View style= {styles.cont}>
               <Text style= {styles.text1}>Time: {e.time}</Text>
@@ -67,7 +66,6 @@ class CalendarScreen extends React.Component {
           </View>
         )
         counter++;
-      }
     }
     );
   }
