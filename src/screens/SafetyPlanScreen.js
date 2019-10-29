@@ -22,52 +22,6 @@ class SafetyPlan extends React.Component {
               maxheight: 1000,
             }}
             scrollToOverflowEnabled={true}>
-        <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('http://www.ulifeline.org/')}> 
-              <Text style= {styles.text1}>Ulifeline</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={()=>{Linking.openURL('tel:8002738255');}}>
-              <Text style= {styles.text2}>To chat with a Crisis Counselor 24/7 about you or someone you are concerned about, call 1-800-273-8255.</Text>
-            </TouchableOpacity>
-        </View>
-        <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('https://www.thetrevorproject.org/')}>              
-              <Text style= {styles.text1}>Trevor Project</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={()=>{Linking.openURL('tel:8664887386');}}>
-              <Text style= {styles.text2}>If you’re a member of the LGBTQ+ community thinking about suicide, you deserve immediate help - please call the Trevor Lifeline at 866-488-7386.</Text>
-            </TouchableOpacity>
-        </View>
-        <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('https://www.crisistextline.org/')}>
-              <Text style= {styles.text1}>Text Crisis Line</Text>
-            </TouchableOpacity>
-            <Text style= {styles.text2}>If calling seems too overwhelming, try texting 'HOME' to 741741.</Text>
-          </View>
-          <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('https://www.rainn.org/')}>
-              <Text style= {styles.text1}>RAINN: Rape, Abuse & Incest National Network</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => Linking.openURL('tel:8006564673')}>
-              <Text style= {styles.text2}>"If you've experienced intimate partner violence or think that someone you know is in an abusive relationship, you're not alone. We're here if you need to talk." Call 800-656-4673</Text>
-            </TouchableOpacity>
-          </View>
-          <View style= {styles.cont}>
-            <TouchableOpacity onPress={() => Linking.openURL('https://www.loveisrespect.org/')}>
-              <Text style= {styles.text1}>Love Is Respect</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => Linking.openURL('tel:8663319474')}>
-              <Text style= {styles.text2}>"If you've experienced intimate partner violence or think that someone you know is in an abusive relationship, you're not alone. We're here if you need to talk." Call (800)656-4673 or text loveis to 22522</Text>
-            </TouchableOpacity>
-          </View>
-          <View style= {styles.cont}>
-              <TouchableOpacity onPress={()=>{Linking.openURL('https://ywca-sv.org/');}}>
-                <Text style= {styles.text1}>YWCA Silicon Valley</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => Linking.openURL('tel:8005722782')}>
-                <Text style= {styles.text2}>"At YWCA Silicon Valley, one of the first multiservice agency in the Bay Area, we are committed to eliminating racism and empowering women by not only a depth of direct service to survivors of domestic violence, sexual assault and human trafficking, but also towards bold systems change." Call (800)572-2782</Text>
-                </TouchableOpacity>
-            </View>
           <View style= {styles.cont}>
             <TouchableOpacity onPress={() => Linking.openURL('https://docs.google.com/document/d/1ati707c38BVhA55Hk62hjayg0qqRAl0kqZh-LgERGY4/edit?usp=sharing')}> 
               <Text style= {styles.text1}>Safety Plan</Text>
