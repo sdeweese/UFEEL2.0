@@ -25,11 +25,11 @@ class Caps extends React.Component {
       [
         {
           text: 'Emergency Call',
-          onPress: () => console.log('Emergency Call')
+          onPress: () => console.log('Emergency Call'), //MAKE THIS WORK
         },
         {
           text: 'Non-Emergency Call',
-          onPress: () => console.log('Non-Emergency Call'),
+          onPress: () => console.log('Non-Emergency Call'), //MAKE THIS WORK
         },
         {
           text: 'Cancel',
@@ -103,7 +103,6 @@ const styles = StyleSheet.create ({
     top: 0,
     height: height,
   },
-
   link: {
     color: 'blue',
   },
@@ -113,10 +112,11 @@ const styles = StyleSheet.create ({
   },
   text: {
     backgroundColor: '#ffffff',
-    padding: 10,
+    padding: 20,
+    marginTop: 15,
     marginBottom: 15,
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: 10,
+    marginRight: 10,
     overflow: 'hidden',
     fontSize: 17,
   },
@@ -129,8 +129,11 @@ const styles = StyleSheet.create ({
     alignContent: 'center',
     borderRadius: 10,
     overflow: 'hidden',
-    padding: 5,
-    margin: 10,
+    padding: 20,
+    marginTop: 15,
+    marginBottom: 15,
+    marginLeft: 10,
+    marginRight: 10,
     fontSize: 15,
   },
   text1: {

@@ -76,6 +76,7 @@ const styles = StyleSheet.create ({
   text1: {
     fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   text2: {
     fontSize: 12,
