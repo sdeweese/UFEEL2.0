@@ -16,7 +16,7 @@ Mental Health application designed for Santa Clara University and its students
 
 # Instructions on where to write code
 
-1. For CSS, wrtie will go into a src/style folder. Most of the style is written within each screen. A more scalable approach would be to make one CSS file and link each screen back to that file to ensure standardized style throughout the app. 
+1. For CSS, code will go into a src/style folder. Most of the style is written within each screen. A more scalable approach would be to make one CSS file and link each screen back to that file to ensure standardized style throughout the app. 
 2. For backend and frontend code, these will go into the src/screen/<name_of_screen files.
 3. To add in new modules and dependencies, ensure you pick ones that are verified and will not be taken down. You can install these by typing in the command line: `npm install <name_of_module_or_dependency>`.
 4. Please remember to follow github protocols and do not overwrite master (`smacks`) branch; work off your own branches.
